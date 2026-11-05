@@ -36,8 +36,16 @@ jobs:
       - uses: gradle/actions/setup-gradle@v6
         with:
           cache-provider: basic
+      # 咔哒(昆仑增长)修改:两个包分两次构建,并给 Gradle / Kotlin 编译更多内存。
+      # 原因:同一次构建里编译两套 Kotlin,默认 2G 内存不够,Kotlin 编译报 OutOfMemoryError(GC overhead limit exceeded)。
+      # 构建机有 16G 内存;只在云端构建时加大,不改仓库里的 gradle.properties(本机构建照旧)。
       - name: Build 咔哒 demo and original debug
-        run: ./gradlew :app:assembleKada :app:assembleDebug --stacktrace
+        env:
+          GRADLE_MEM: -Dorg.gradle.jvmargs=-Xmx5g -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8
+        run: |
+          set -euo pipefail
+          ./gradlew "$GRADLE_MEM" -Pkotlin.daemon.jvmargs=-Xmx4g :app:assembleKada --stacktrace
+          ./gradlew "$GRADLE_MEM" -Pkotlin.daemon.jvmargs=-Xmx4g :app:assembleDebug --stacktrace
       - name: Inspect package
         id: apk
         run: |
