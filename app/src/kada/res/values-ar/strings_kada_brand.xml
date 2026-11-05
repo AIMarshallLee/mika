@@ -17,8 +17,10 @@
     <string name="browser_ask_menu">اسأل Kada</string>
     <string name="browser_ask_paused">أنت تستخدم الصفحة، لذا أوقف Kada عمله مؤقتًا</string>
     <string name="browser_ask_paused_hint">عند الانتهاء، انقر على «متابعة» ليكمل Kada من هنا.</string>
+    <string name="browser_logged_in">تم تسجيل الدخول — يمكن لـKada استخدامه للمهام أيضًا.</string>
     <string name="browser_login_for_mika">تسجيل الدخول إلى Kada</string>
-    <string name="browser_login_for_mika_sub">" · يفتح إصدار %1$s الذي يستخدمه Kada للمهام؛ وبعد تسجيل الدخول، يمكن لـMika استخدامه أيضًا"</string>
+    <string name="browser_login_for_mika_sub">" · يفتح إصدار %1$s الذي يستخدمه Kada للمهام؛ وبعد تسجيل الدخول، يمكن لـKada استخدامه أيضًا"</string>
+    <string name="browser_login_legend">تم تسجيل الدخول — يمكن لـKada استخدامه مباشرةً للمهام</string>
     <string name="capsule_asks">تسأل Kada: %1$s</string>
     <string name="capsule_desc_other">Kada: %1$s، انقر للتفاصيل</string>
     <string name="capsule_desc_running">تعمل Kada: %1$s، انقر للتفاصيل</string>
@@ -184,6 +186,7 @@
     <string name="voice_permission_body">لكي تسمعك Kada عند الضغط مطولًا للتحدث، يلزمها تسجيل الصوت. سبق أن رُفض الإذن، لذا لن يطلب الهاتف الإذن مجددًا. فعّل الميكروفون في صفحة أذونات Kada ضمن إعدادات النظام.</string>
     <string name="voice_permission_title">تحتاج Kada إلى الميكروفون</string>
     <string name="web_challenged_note">واجه Kada مؤخرًا اختبار CAPTCHA أو حظر وصول على هذا الموقع. إذا تكرر ذلك، فامسح بيانات هذا الموقع (ملفات تعريف الارتباط ومساحة تخزين الويب) وسجّل الدخول مجددًا.</string>
+    <string name="web_data_note">تُخزَّن بيانات تسجيل الدخول إلى المواقع في المجلد الخاص بـKada على هذا الهاتف فقط، من دون تشفير إضافي — وبمستوى الحماية نفسه الذي يوفّره متصفح النظام.</string>
     <string name="web_logout_all_body">يؤدي ذلك إلى تسجيل الخروج من كل المواقع في المتصفح المضمّن ومسح بيانات الويب الخاصة بها والمخزنة في Kada. سيحتاج Kada إلى تسجيل الدخول مجددًا عند استخدام تلك المواقع.</string>
     <string name="web_mika_visited">زار Kada هذا الموقع.</string>
     <string name="web_none_sub">تظهر المواقع هنا بعد أن يعمل عليها Kada أو بعد تسجيل الدخول إليها من هنا</string>

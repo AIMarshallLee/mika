@@ -40,6 +40,7 @@
     <string name="card_see_process">回到咔哒看完整过程</string>
     <string name="card_zoom_hint">咔哒正在后台操作 · 点一下关闭</string>
     <string name="chat_empty_prompt">想让咔哒做什么？</string>
+    <string name="chat_example_group_summary">帮我总结微信群聊，咔哒内测体验群今天都聊了些啥</string>
     <string name="chat_placeholder_answer">回答咔哒的问题</string>
     <string name="chat_quoting_mika">引用咔哒:%1$s</string>
     <string name="chatgpt_fail_no_client">ChatGPT 没有完成对咔哒的注册，请再试一次。</string>

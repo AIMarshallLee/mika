@@ -37,7 +37,7 @@ def tidy_cjk(text: str, name: str) -> str:
 
 
 # 不在网址、路径、类名里:前面不是 / . 字母数字,后面不是 / 字母数字
-WORD = re.compile(r"(?<![/.\w])Mika(?![/\w])")
+WORD = re.compile(r"(?<![/.A-Za-z0-9_])Mika(?![/A-Za-z0-9_])")
 
 CUSTOM = {
     "values-zh": {

@@ -36,6 +36,7 @@
     <string name="card_see_process">回到咔噠看完整過程</string>
     <string name="card_zoom_hint">咔噠正在背景操作 · 點一下關閉</string>
     <string name="chat_empty_prompt">想讓咔噠做什麼？</string>
+    <string name="chat_example_group_summary">幫我總結微信群聊，咔噠內測體驗群今天都聊了些啥</string>
     <string name="chat_placeholder_answer">回答咔噠的問題</string>
     <string name="chat_quoting_mika">引用咔噠:%1$s</string>
     <string name="chatgpt_fail_no_client">ChatGPT 沒有完成對咔噠的註冊，請再試一次。</string>
