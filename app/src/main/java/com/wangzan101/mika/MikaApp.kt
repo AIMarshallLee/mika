@@ -245,7 +245,9 @@ class MikaApp : Application(), WebOwner, SandboxOwner, TaskEnvironment.Owner, Ph
 
     /** 检查更新:查到的新版本跟进程走,侧栏、设置首页、关于页的红点看同一份。 */
     val updates: com.wangzan101.mika.about.UpdateChecker by lazy {
+        // 咔哒修改:咔哒构建不检查 Mika 原版的发布页(否则会把原版安装包当成咔哒的更新)
         com.wangzan101.mika.about.UpdateChecker(java.io.File(filesDir, "update-v1.json"), BuildConfig.VERSION_NAME,
+            releaseApi = if (BuildConfig.UPDATE_CHECK) com.wangzan101.mika.about.MikaLinks.LATEST_RELEASE_API else "",
             deviceAbis = android.os.Build.SUPPORTED_ABIS.toList())
     }
 
@@ -334,6 +336,8 @@ class MikaApp : Application(), WebOwner, SandboxOwner, TaskEnvironment.Owner, Ph
         AppLanguage.applyDefaultLocale(this)
         UiText.source = ResourceTexts { AppLanguage.resources(this) }
         registerActivityLifecycleCallbacks(foreground)
+        // 咔哒修改:智能体对用户自称的名字跟 App 名一致
+        com.wangzan101.mika.core.agent.SystemPrompt.brandName = BuildConfig.BRAND_NAME
         // 设置 › 网络代理:Mika 自己的连接从第一个请求起就按它走;SOCKS 代理的账号密码经全进程的认证器给
         com.wangzan101.mika.settings.NetProxyStore.get(this)
         com.wangzan101.mika.core.net.NetProxy.shared.installSocksAuth()

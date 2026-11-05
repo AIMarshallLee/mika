@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="capsule_desc_other">Kada: %1$s, 눌러서 자세히 보기</string>
+    <string name="capsule_mode_always_detail">작업이 없어도 화면에 Kada 아이콘을 계속 표시해요</string>
+    <string name="capsule_voice_open">Kada 열기</string>
+    <string name="chat_quoting_mika">Kada 인용: %1$s</string>
+    <string name="chatgpt_fail_no_client">ChatGPT가 Kada 등록을 마치지 못했어요. 다시 시도하세요.</string>
+    <string name="chatgpt_page_title">Kada</string>
+    <string name="chatgpt_revoke_unconfirmed">이 휴대전화에서는 로그아웃했지만 ChatGPT가 확인해 주지 않았어요. ChatGPT 설정에서 Kada 연결을 해제할 수도 있어요.</string>
+    <string name="chatgpt_use_plan_body">이 앱의 해당 AI 요청을 ChatGPT 요금제에 포함된 사용량이나 크레딧 잔액으로 처리해요. ChatGPT Plus와 Pro에서 쓸 수 있어요. Kada 자체는 무료이며 Mika가 청구하는 비용은 없어요.</string>
+    <string name="gate_move_back_failed">앱을 Kada 화면으로 되돌리지 못했어요. 계속을 눌러 다시 시도하세요</string>
+    <string name="heads_up_path">설정 › 앱 › Kada › 알림 › %1$s › 화면에 팝업 (휴대전화에 따라 “배너”나 “플로팅 알림”이라고 해요)</string>
+    <string name="issue_body">- 기기: %1$s\n- Android 버전: %2$s (SDK %3$d)\n- Kada 버전: %4$s (빌드 %5$s)\n\n### 어떤 문제가 있었나요\n\n\n### 어떻게 했나요\n\n\n### 기대한 동작\n\n\n### 진단 정보\n(선택) Mika에서 정보 › 의견 보내기 › 진단 정보 복사를 눌러 여기에 붙여넣으세요\n\n</string>
+    <string name="mcp_usb_client_instructions">Add a Streamable HTTP MCP server at http://127.0.0.1:%1$d/mcp on this computer. Set the Authorization header to Bearer followed by the token printed by the Kada start command. Do not print the token in the conversation. Connect or refresh the tool list and check that the request time on the phone updates. Guide: https://github.com/wangzan101/Mika/blob/main/docs/mcp.en.md</string>
+    <string name="net_proxy_container_only">https:// 프록시는 ‘파일 및 컴퓨팅 환경’의 명령에만 쓰이고, Kada 자체 연결은 계속 직접 연결해요. 모두 프록시를 거치게 하려면 http:// 또는 socks5://를 쓰세요.</string>
+    <string name="notif_footer">Android에서는 알림 종류별로 팝업 표시나 소리 여부를 시스템 설정에서 직접 바꿀 수 있어요. 위 항목을 누르면 해당 설정 페이지가 열려요. 경로: 설정 › 앱 › Kada › 알림</string>
+    <string name="notif_result_title">Kada 작업 결과</string>
+    <string name="phone_start_using">Kada 사용 시작</string>
+    <string name="phone_step_a11y">Kada 접근성 켜기</string>
+    <string name="rec_auto_wireless_body">Wi-Fi가 끊기거나 휴대전화를 재부팅하면 시스템이 “무선 디버깅”을 꺼요. 휴대전화 제어는 보통 무선 디버깅이 필요 없고, Kada 업데이트 후처럼 다시 시작할 때만 필요해요. 이 기능을 켜면 그런 때 Wi-Fi에 연결되어 있으면 Mika가 무선 디버깅을 켜고 다시 연결해요. 대신 꺼 주지는 않아요. “재부팅 후 복원”과 같은 “시스템 설정 수정” 권한을 쓰며, 허용한 Wi-Fi에서만 동작해요. 끄면 Mika가 이 동작을 멈춰요.</string>
+    <string name="selfcheck_target_title">Kada 자가 점검 페이지</string>
+    <string name="settings_about">Kada 정보</string>
+    <string name="signin_openrouter_signed_in_note">사용량은 OpenRouter 잔액에서 차감돼요. 키는 이 휴대전화에 암호화되어 저장돼요. 더 이상 쓰지 않으려면 OpenRouter의 Keys 페이지에서 \"Kada\"라는 키를 삭제하세요.</string>
+    <string name="takeover_move_back_failed">앱을 Kada 화면으로 되돌리지 못했어요. 다시 시도해 주세요.</string>
+    <string name="task_notif_title">Kada: %1$s</string>
+    <string name="trigger_reminder">Kada 알림</string>
+    <string name="voice_permission_body">길게 눌러 말하는 동안 목소리를 들으려면 Mika가 오디오를 녹음해야 해요. 전에 거부해서 휴대전화가 다시 묻지 않아요. 시스템 설정의 Kada 권한 페이지에서 마이크를 켜세요.</string>
+    <string name="web_data_note">웹사이트 로그인 정보는 이 휴대전화의 Kada 전용 폴더에만 저장되며 별도 암호화는 하지 않아요. 시스템 브라우저와 같은 수준의 보호예요.</string>
+    <string name="web_takeover_login">Kada 브라우저에서 로그인한 다음 “완료”를 누르세요</string>
+    <string name="wechat_notif_body">개인 메시지로 Kada 작업을 시작할 수 있어요</string>
+</resources>

@@ -24,6 +24,12 @@ android {
         buildConfigField("String", "GIT_HASH", "\"$gitHash\"")
         // 关于页版本号后的 Beta 标记;出正式版时改成 false
         buildConfigField("boolean", "BETA", "true")
+        // 咔哒(昆仑增长)修改:品牌名、电脑连接默认端口、是否检查原版发布页,按构建类型给;原版构建保持原值
+        buildConfigField("String", "BRAND_NAME", "\"Mika\"")
+        buildConfigField("int", "MCP_DEFAULT_PORT", "8765")
+        buildConfigField("boolean", "UPDATE_CHECK", "true")
+        buildConfigField("long", "ACCENT_LIGHT", "0xFF0A7CFFL")
+        buildConfigField("long", "ACCENT_DARK", "0xFF3D97FFL")
     }
 
     // 沙箱程序只有 arm64 版本(jniLibs/arm64-v8a);APK 不限 ABI,别的设备照常安装、显示「此设备不支持沙箱」。
@@ -67,6 +73,21 @@ android {
             isProfileable = true
             matchingFallbacks += "release"
         }
+        // 咔哒(昆仑增长)修改:咔哒手机版(白标)。代码与原版相同,只换应用标识、名字、图标和少量文字;
+        // 资源覆盖放在 app/src/kada/res,原版资源一字不改,方便以后合并 Mika 上游。
+        // 和发布版一样不可调试(界面流畅);演示阶段用本机调试签名,正式发布换成自己保管的发布密钥(不进仓库)。
+        // 构建:./gradlew :app:assembleKada  或  tools/kada/build-demo.sh
+        create("kada") {
+            initWith(getByName("release"))
+            signingConfig = signingConfigs.getByName("debug")
+            matchingFallbacks += "release"
+            buildConfigField("String", "BRAND_NAME", "\"咔哒\"")
+            buildConfigField("int", "MCP_DEFAULT_PORT", "18765")
+            buildConfigField("boolean", "UPDATE_CHECK", "false")
+            // 昆仑紫 #4A265F(和咔哒电脑端同一个主题色);深色模式用提亮的同色相紫,保证对比度
+            buildConfigField("long", "ACCENT_LIGHT", "0xFF4A265FL")
+            buildConfigField("long", "ACCENT_DARK", "0xFFB58BD6L")
+        }
     }
 
     buildFeatures {
@@ -78,6 +99,21 @@ android {
 
 kotlin {
     jvmToolchain(17)
+}
+
+// 咔哒(昆仑增长)修改:咔哒构建用自己的应用标识和版本号,与原版 Mika 并存安装、数据互不影响。
+// 代码命名空间(com.wangzan101.mika)不变;清单里的 ${'$'}{applicationId}、Provider、助手进程名都跟着新标识走。
+val kadaApplicationId = "com.kunlungrowth.kadadesk"
+val kadaVersionName = "0.1.0-demo"
+val kadaVersionCode = 1
+androidComponents {
+    onVariants(selector().withBuildType("kada")) { variant ->
+        variant.applicationId.set(kadaApplicationId)
+        variant.outputs.forEach { output ->
+            output.versionName.set(kadaVersionName)
+            output.versionCode.set(kadaVersionCode)
+        }
+    }
 }
 
 dependencies {

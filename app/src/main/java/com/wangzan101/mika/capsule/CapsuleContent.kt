@@ -104,7 +104,8 @@ object CapsuleCopy {
     val EXPAND: String get() = tr(R.string.capsule_expand)
     val TALK: String get() = tr(R.string.capsule_talk)
     val SWAP_SIDE: String get() = tr(R.string.capsule_swap_side)
-    const val IDLE = "Mika"
+    // 咔哒(昆仑增长)修改:品牌名改由构建配置提供,原版构建仍是 Mika
+    const val IDLE = com.wangzan101.mika.BuildConfig.BRAND_NAME
 
     /** 读屏时一颗图标的说法:在做什么、要不要你处理、结果;好几件时的件数已在 [CapsuleView.Shown.text] 里。 */
     fun describe(view: CapsuleView.Shown): String = when {
@@ -112,7 +113,7 @@ object CapsuleCopy {
         view.kind.needsYou -> tr(R.string.capsule_desc_needs, view.text)
         view.kind == CapsuleKind.Running -> tr(R.string.capsule_desc_running, view.text)
         view.kind == CapsuleKind.Held || view.kind == CapsuleKind.Cancelled -> tr(R.string.capsule_desc_other, view.text)
-        else -> "Mika ${view.text}"
+        else -> "$IDLE ${view.text}"
     }
 }
 

@@ -112,7 +112,8 @@ class UpdateChecker(
     }
 
     /** GitHub 上最新的发布;没查到为空。 */
-    internal fun fetchLatest(): ReleaseInfo? = runCatching { Releases.fromGitHub(get(releaseApi), deviceAbis) }.getOrNull()
+    // 咔哒修改:没有更新来源(咔哒构建)时不联网
+    internal fun fetchLatest(): ReleaseInfo? = if (releaseApi.isBlank()) null else runCatching { Releases.fromGitHub(get(releaseApi), deviceAbis) }.getOrNull()
 
     private fun get(url: String): String {
         val req = Request.Builder().url(url)

@@ -33,7 +33,8 @@ object ChatCopy {
     )
 
     /** 对话页顶栏的标题:固定是 App 名;副标题说此刻在做什么。 */
-    const val APP_TITLE = "Mika"
+    // 咔哒(昆仑增长)修改:品牌名改由构建配置提供,原版构建仍是 Mika
+    const val APP_TITLE = com.wangzan101.mika.BuildConfig.BRAND_NAME
 
     /** 对话的名字:第一句话(只取第一行,附件那几行不算;只发了屏幕时是「你此刻的屏幕」);空对话为空。侧栏里用它称呼对话。 */
     fun title(exchanges: List<Exchange>): String =

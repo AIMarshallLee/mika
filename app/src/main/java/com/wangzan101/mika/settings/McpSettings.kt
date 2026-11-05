@@ -70,7 +70,8 @@ class McpSettings(private val dir: File, private val cipher: KeyCipher, private 
     }
 
     companion object {
-        const val DEFAULT_PORT = 8765
+        // 咔哒修改:默认端口由构建配置提供(原版 8765,咔哒 18765),两者装在同一台手机上不抢端口
+        const val DEFAULT_PORT = com.wangzan101.mika.BuildConfig.MCP_DEFAULT_PORT
         private const val MIN_TOKEN = 32
     }
 }

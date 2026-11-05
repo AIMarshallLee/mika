@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 咔哒(昆仑增长)修改:版本号后的测试版标记,咔哒构建覆盖成「演示版」 -->
+    <string name="about_beta_label" translatable="false">Beta</string>
     <string name="about_tagline">Your personal assistant on your phone, getting things done for you</string>
     <string name="about_check">Check for updates</string>
     <string name="about_check_sub">Get new versions from GitHub Releases</string>

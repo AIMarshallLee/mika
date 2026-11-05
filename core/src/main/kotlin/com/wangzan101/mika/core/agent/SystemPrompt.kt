@@ -11,7 +11,17 @@ import com.wangzan101.mika.core.prompt.Prompts
  * 任务开始时拼一次,任务内一字不变。
  */
 object SystemPrompt {
-    fun identity(): String = listOf(Prompts.system("identity"), Prompts.system("principles"), read(GENERAL)).joinToString("\n\n")
+    /** 咔哒(昆仑增长)修改:App 对外的名字;原版是 Mika,换了名字时身份段说明自称什么。 */
+    @Volatile var brandName: String = "Mika"
+
+    fun identity(): String = listOf(branded(Prompts.system("identity")), Prompts.system("principles"), read(GENERAL)).joinToString("\n\n")
+
+    /** 原版名字不改动一个字;换名时把开头的「You are Mika」换掉,并说明其余提示里的 Mika 指的就是这个 App。 */
+    internal fun branded(identity: String, name: String = brandName): String =
+        if (name == "Mika") identity
+        else identity.replaceFirst("You are Mika,", "You are $name,") +
+            "\n\nThis app is called $name (it is built on the open-source Mika agent). Tool results and notes may still say \"Mika\"; " +
+            "that is this same app. When you talk to the user about yourself or this app, always call it $name, never Mika."
 
     fun assemble(identity: String, sections: List<String>): String = (listOf(identity) + sections).joinToString("\n\n")
 

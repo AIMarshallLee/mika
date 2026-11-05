@@ -10,7 +10,8 @@ import com.wangzan101.mika.about.UpdateState
 object AboutCopy {
     val TITLE: String get() = tr(R.string.settings_about)
     val TAGLINE: String get() = tr(R.string.about_tagline)
-    const val BETA = "Beta"
+    // 咔哒修改:标记文字放进资源,咔哒构建显示「演示版」
+    val BETA: String get() = tr(R.string.about_beta_label)
 
     val CHECK: String get() = tr(R.string.about_check)
     val CHECK_SUB: String get() = tr(R.string.about_check_sub)

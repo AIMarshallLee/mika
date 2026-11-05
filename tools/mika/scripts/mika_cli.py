@@ -19,7 +19,12 @@ import uuid
 
 VERSION = "0.1.0"
 API = "/api/v1"
-PHONE_FILES = "/sdcard/Android/data/com.wangzan101.mika/files"
+# 咔哒(昆仑增长)修改:手机上 App 的包名可用环境变量 MIKA_PACKAGE 指定(咔哒手机版是 com.kunlungrowth.kadadesk);
+# 不设时仍是原版 Mika。只接受合法包名,防止拼进路径。
+PACKAGE = os.environ.get("MIKA_PACKAGE", "com.wangzan101.mika")
+if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+", PACKAGE):
+    PACKAGE = "com.wangzan101.mika"
+PHONE_FILES = "/sdcard/Android/data/" + PACKAGE + "/files"
 INFO_FILE = PHONE_FILES + "/mcp-usb.json"
 CONNECT_SCRIPT = PHONE_FILES + "/connect-computer.sh"
 MAX_RESPONSE = 4 * 1024 * 1024

@@ -232,7 +232,7 @@ fun ChatDrawer(
         ) {
             MikaLogo(36.dp, corner = 10.dp)
             Column {
-                Text("Mika", style = MikaType.Title, color = c.ink)
+                Text(com.wangzan101.mika.BuildConfig.BRAND_NAME, style = MikaType.Title, color = c.ink) // 咔哒修改:品牌名
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(5.dp)) {
                     Box(Modifier.size(6.dp).background(if (ok) c.ok else c.warnSolid, CircleShape))
                     Text(state, style = MikaType.Hint, fontWeight = FontWeight.Medium, color = c.ink3)
