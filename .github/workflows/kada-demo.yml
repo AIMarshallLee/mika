@@ -52,9 +52,11 @@ jobs:
           grep -q "versionName='${VERSION}'" dist/badging.txt
           "$AAPT2" dump badging app/build/outputs/apk/debug/app-debug.apk | grep -E "^package:" | tee -a dist/badging.txt
           grep -q "package: name='com.wangzan101.mika'" dist/badging.txt
-          ( cd dist && sha256sum "咔哒手机版-v${VERSION}.apk" | tee SHA256SUMS.txt )
+          # GitHub 会改写发布附件里的中文文件名,另存一份英文名的同一个包供下载链接使用
+          cp "$OUT" "dist/kada-mobile-v${VERSION}.apk"
+          ( cd dist && sha256sum "咔哒手机版-v${VERSION}.apk" "kada-mobile-v${VERSION}.apk" | tee SHA256SUMS.txt )
           ls -la dist
-          echo "file=$OUT" >> "$GITHUB_OUTPUT"
+          echo "file=dist/kada-mobile-v${VERSION}.apk" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v7
         with:
           name: kada-mobile-demo
