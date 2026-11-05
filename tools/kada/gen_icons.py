@@ -47,7 +47,8 @@ def main(master: str) -> None:
     place(bg.copy(), 0.70).convert("RGB").save(OUT / "drawable-nodpi/mika_launcher_art.png", optimize=True)
 
     f = 432
-    fg = place(Image.new("RGBA", (f, f), (0, 0, 0, 0)), 0.58)
+    # 咔哒(昆仑增长):0.50 让小紫怪整个落在自适应图标 66dp 安全圆内(0.58 时圆形图标会切到脚和卡扣)
+    fg = place(Image.new("RGBA", (f, f), (0, 0, 0, 0)), 0.50)
     fg.save(OUT / "drawable-nodpi/kada_launcher_fg.png", optimize=True)
 
     arr = np.array(fg)
