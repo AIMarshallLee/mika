@@ -35,6 +35,15 @@ android {
         buildConfigField("String", "GUIDE_URL", "\"https://github.com/wangzan101/Mika#readme\"")
     }
 
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
+
     // 沙箱程序只有 arm64 版本(jniLibs/arm64-v8a);APK 不限 ABI,别的设备照常安装、显示「此设备不支持沙箱」。
     // 沙箱程序要从 nativeLibraryDir 直接执行,安装时必须解到磁盘
     packaging { jniLibs { useLegacyPackaging = true } }
