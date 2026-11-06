@@ -156,6 +156,17 @@ class KadaGuardTest {
         assertTrue(r.s("message"), "computer" in r.s("message"))
     }
 
+    @Test fun enterInAnUnrecognisedFieldPointsToTheSearchButton() = runTest {
+        ApprovalPolicy.outwardNeedsUser = true
+        val s = Screen(chatPage)
+        val m = FakeModel(OBSERVE, tools(call("phone_type_text", """{"text":"x","ref":"@e2","snapshotId":"s1","pressEnter":true}""")), FINISH)
+        val spec = RunSpec(RunId("r"), "t", "th", provenance = RunProvenance(RunOrigin.Mcp, Attendance.Present))
+        loop(m, s).run(spec, RunInbox())
+        val r = m.result(2)
+        assertEquals("approval_unavailable", r.s("error"))
+        assertTrue(r.s("message"), "search button" in r.s("message"))
+    }
+
     @Test fun autonomousScheduledTaskCannotSendEither() = runTest {
         ApprovalPolicy.outwardNeedsUser = true
         val s = Screen(chatPage)

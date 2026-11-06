@@ -60,6 +60,12 @@ internal object Refusals {
     private const val OUTWARD_UNATTENDED = "This step sends, posts, submits or deletes something, and in a task started from a computer, " +
         "a schedule or a channel (or while nobody is at the phone) such actions are not allowed. The action was not run. " +
         "Do not retry it or look for another way to do it; finish the read-only part and tell the user exactly what still needs their own hands."
+    /** 回车、空格在认不出是搜索框的输入框里按发送算:真是搜索框时点页面上的搜索按钮(查找不是对外动作)。 */
+    private const val ENTER_HINT = " If this field is only a search box, do not press Enter: tap the page's own search button (搜索, 查询, Search) instead; " +
+        "searching is allowed, Enter in a text field is treated as sending."
+
+    private fun outwardUnattended(hit: Irreversible) =
+        if (hit.matched.startsWith("回车:") || hit.matched.startsWith("空格:")) OUTWARD_UNATTENDED + ENTER_HINT else OUTWARD_UNATTENDED
     const val PAYMENT_TAKEOVER = "The user completes payment with their own hands; do not use request_confirmation: after opening the payment page, call hand_to_user(reason=payment), " +
         "with item as the product (variant, quantity), amount as the amount due shown on screen, and address as the delivery address."
 
@@ -68,7 +74,7 @@ internal object Refusals {
         // 模型单步被守卫叫停时任务就此结束,用不到说明
         RefusalStyle.Model -> if (code == "approval_unavailable") notRun(code,
             // 咔哒(昆仑增长)修改:不花钱的对外动作(发送、提交、删除)被拦下时照实说原因
-            if (hit != null && hit.action in OUTWARD_NOT_MONEY) OUTWARD_UNATTENDED else
+            if (hit != null && hit.action in OUTWARD_NOT_MONEY) outwardUnattended(hit) else
             "This step spends money, but this run cannot collect the user's approval. The action was not run. " +
                 "Do not retry this action in this run; explain the limitation to the user.") {
             hit?.let { put("action", it.action.name); put("matched", it.matched) }
@@ -83,7 +89,7 @@ internal object Refusals {
                 "guard_warning" -> "Mika's operation guard flagged this action; it was not run."
                 "confirmation_required" -> "this step spends money (${hit?.matched})"
                 "confirmation_mismatch" -> "this payment step (${hit?.matched}) does not match what the user approved ($reason)"
-                "approval_unavailable" -> if (hit != null && hit.action in OUTWARD_NOT_MONEY) OUTWARD_UNATTENDED
+                "approval_unavailable" -> if (hit != null && hit.action in OUTWARD_NOT_MONEY) outwardUnattended(hit)
                     else "this step spends money and this run cannot get the user's approval; the action was not run"
                 "target_unresolved" -> "that ref is not on the latest snapshot; call mika.snapshot() again"
                 OWN_APP -> Feedback["own_app"]
