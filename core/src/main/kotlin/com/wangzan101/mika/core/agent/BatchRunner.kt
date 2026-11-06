@@ -1,5 +1,7 @@
 package com.wangzan101.mika.core.agent
 
+import com.wangzan101.mika.core.action.Refusals
+
 import com.wangzan101.mika.core.observation.Observation
 import com.wangzan101.mika.core.run.SKIPPED_FOR_NEW_MESSAGE
 import com.wangzan101.mika.core.guard.OperationGuards
@@ -111,7 +113,8 @@ class BatchRunner(
                 is ActionOutcome.Refused -> {
                     val hit = out.hit
                     // 应用权限拒绝:把执行入口给的下一步说明一起交给模型,别让它只看到错误码
-                    val message = (out.content["message"] as? JsonPrimitive)?.contentOrNull?.takeIf { appAccessDenied(out.code) }
+                    // 咔哒(昆仑增长)修改:验证码硬护栏的说明也一并交给模型
+                    val message = (out.content["message"] as? JsonPrimitive)?.contentOrNull?.takeIf { appAccessDenied(out.code) || out.code == Refusals.CAPTCHA }
                     stop = if (hit == null) notRun(out.code, message = message)
                     else notRun(out.code, buildJsonObject { put("action", hit.action.name); put("matched", hit.matched) }, message)
                     break

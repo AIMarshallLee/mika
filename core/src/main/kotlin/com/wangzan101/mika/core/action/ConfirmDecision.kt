@@ -1,5 +1,6 @@
 package com.wangzan101.mika.core.action
 
+import com.wangzan101.mika.core.gate.CaptchaGuard
 import com.wangzan101.mika.core.gate.ConfirmationGate
 import com.wangzan101.mika.core.gate.ConfirmationRequest
 import com.wangzan101.mika.core.risk.IrrevAction
@@ -34,6 +35,8 @@ sealed interface Decision {
     data class Denied(val hit: Irreversible) : Decision
     /** 作用在 Mika 自己身上,不做。 */
     data object OwnApp : Decision
+    /** 咔哒(昆仑增长)修改:屏上正挂着人机验证,这一步是在做验证(点、拖、输入),不做;[matched] 是屏上的验证字样。 */
+    data class Captcha(val matched: String) : Decision
 }
 
 /**
@@ -62,11 +65,19 @@ class ConfirmDecision(
     /** 判定放在锁屏等待之后:按此刻重新读的一屏判。 */
     suspend fun judge(tool: String, args: JsonObject, origin: Origin): Decision {
         outwardSite = null
+        // 咔哒(昆仑增长)修改:验证码硬护栏,自主执行时也拦
+        captcha(tool, args)?.let { return it }
         if (autonomous || approvals.autonomous()) {
             val target = tools.gateTarget(tool)
             if (IrreversibleDetector.needsCheck(target, args)) {
                 val aim = tools.interfaces.actionTarget(tools.declared(tool), args)
-                outwardSite = outward(IrreversibleDetector.classify(target, aim.args, aim.aimed), aim.aimed)
+                val hit = IrreversibleDetector.classify(target, aim.args, aim.aimed)
+                outwardSite = outward(hit, aim.aimed)
+                // 咔哒(昆仑增长)修改:自主执行时,非手机发起或无人值守的运行里对外、收不回的动作照样不做
+                if (hit != null && ApprovalPolicy.deniesOutward(hit.action, provenance)) {
+                    recorder?.approval(origin, tool, hit, risks.assess(tools.verb(tool), hit) { aim.aimed }, "denied")
+                    return Decision.Denied(hit)
+                }
             }
             return Decision.Clear
         }
@@ -95,6 +106,20 @@ class ConfirmDecision(
         approve(tool, checked, origin, hit, risk, fresh ?: snap, typing, seen)?.let { return it }
         if (hit != null || !IrreversibleDetector.unresolved(target, checked, snap, fresh)) return Decision.Clear
         return if (policy.refuseUnresolved) Decision.Unresolved else Decision.Traced(unresolvedDetail(args, aim.readAgeMs, fresh != null))
+    }
+
+    /**
+     * 咔哒(昆仑增长)修改:模型那一眼的屏上挂着人机验证、这一步又是在那一屏上点、拖、输入时拦下;
+     * 点关闭、返回一类按钮放行(离开验证)。没有那一眼(没读过屏)不判。
+     */
+    private fun captcha(tool: String, args: JsonObject): Decision? {
+        val verb = tools.verb(tool)
+        if (verb !in CaptchaGuard.BLOCKED_VERBS || !tools.writesScreen(tool)) return null
+        val aim = tools.interfaces.actionTarget(tools.declared(tool), args)
+        val screen = aim.aimed ?: return null
+        val matched = CaptchaGuard.captchaText(screen) ?: return null
+        if (CaptchaGuard.leaves(ClassifiedRisk.target(verb, aim.args, screen))) return null
+        return Decision.Captcha(matched)
     }
 
     /** 命中的是发送、提交时这一屏的网站或 App。 */

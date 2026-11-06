@@ -53,12 +53,22 @@ fun ActionOutcome.execution(): ToolExecution = when (this) {
 internal object Refusals {
     const val SINGLE_USE = "One approval lets through only the next matching action, and that action uses it up whether it succeeds or not."
     const val OWN_APP = "own_app"
+    /** 咔哒(昆仑增长)修改:屏上挂着人机验证,这一步在做验证,不执行(见 CaptchaGuard)。 */
+    const val CAPTCHA = "captcha_refused"
+    /** 咔哒(昆仑增长)修改:不花钱的对外动作在非手机发起、无人值守的运行里不做时的说明。 */
+    private val OUTWARD_NOT_MONEY = setOf(IrrevAction.send, IrrevAction.submit, IrrevAction.delete)
+    private const val OUTWARD_UNATTENDED = "This step sends, posts, submits or deletes something, and in a task started from a computer, " +
+        "a schedule or a channel (or while nobody is at the phone) such actions are not allowed. The action was not run. " +
+        "Do not retry it or look for another way to do it; finish the read-only part and tell the user exactly what still needs their own hands."
     const val PAYMENT_TAKEOVER = "The user completes payment with their own hands; do not use request_confirmation: after opening the payment page, call hand_to_user(reason=payment), " +
         "with item as the product (variant, quantity), amount as the amount due shown on screen, and address as the delivery address."
 
-    fun content(code: String, style: RefusalStyle, before: List<GuardVerdict>, hit: Irreversible?, reason: String?): JsonObject = when (style) {
+    fun content(code: String, style: RefusalStyle, before: List<GuardVerdict>, hit: Irreversible?, reason: String?): JsonObject =
+        if (code == CAPTCHA) captcha(hit?.matched) else when (style) {
         // 模型单步被守卫叫停时任务就此结束,用不到说明
         RefusalStyle.Model -> if (code == "approval_unavailable") notRun(code,
+            // 咔哒(昆仑增长)修改:不花钱的对外动作(发送、提交、删除)被拦下时照实说原因
+            if (hit != null && hit.action in OUTWARD_NOT_MONEY) OUTWARD_UNATTENDED else
             "This step spends money, but this run cannot collect the user's approval. The action was not run. " +
                 "Do not retry this action in this run; explain the limitation to the user.") {
             hit?.let { put("action", it.action.name); put("matched", it.matched) }
@@ -73,7 +83,8 @@ internal object Refusals {
                 "guard_warning" -> "Mika's operation guard flagged this action; it was not run."
                 "confirmation_required" -> "this step spends money (${hit?.matched})"
                 "confirmation_mismatch" -> "this payment step (${hit?.matched}) does not match what the user approved ($reason)"
-                "approval_unavailable" -> "this step spends money and this run cannot get the user's approval; the action was not run"
+                "approval_unavailable" -> if (hit != null && hit.action in OUTWARD_NOT_MONEY) OUTWARD_UNATTENDED
+                    else "this step spends money and this run cannot get the user's approval; the action was not run"
                 "target_unresolved" -> "that ref is not on the latest snapshot; call mika.snapshot() again"
                 OWN_APP -> Feedback["own_app"]
                 else -> error("unknown refusal $code")
@@ -81,6 +92,17 @@ internal object Refusals {
             notRun(code, message) { hit?.let { put("action", it.action.name); put("matched", it.matched) } }
         }
         RefusalStyle.Code -> notRun(code, code)
+    }
+
+    /** 咔哒(昆仑增长)修改:验证码硬护栏的说明;各来源同一句。 */
+    private fun captcha(matched: String?) = buildJsonObject {
+        put("ok", false); put("error", CAPTCHA); put("executed", false)
+        matched?.let { put("matched", it) }
+        put("message", "This screen shows a human-verification check" + (matched?.let { " (\"$it\")" } ?: "") +
+            ", so this action was not run: solving or getting around verification is not allowed. Leave it (go back, close it, " +
+            "or open a different site or source) and continue the task without it. If the task cannot go on without this page, " +
+            "call hand_to_user with reason captcha, or end_not_done and say the site requires verification.")
+        put("recoverable", true); put("counts_as_failure", false)
     }
 
     /** 要用户同意的一步(不在屏上、工具声明要问的),这次运行却问不到人。 */

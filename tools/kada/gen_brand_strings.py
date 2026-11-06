@@ -99,6 +99,15 @@ CUSTOM = {
         "diagnostics_copy_sub": f"Version, device and settings — copy and send to {SERVICE_EMAIL}",
         "welcome_title": "Hi, I’m Kada",
         "chat_example_follow": f"Open WeChat, search for the official account {MP_NAME}, and follow it.",
+        # 开源许可页顶部的上游与修改说明(Apache-2.0 第 4 条),以及 GPL/LGPL 组件源码的位置;原版里为空、不显示
+        "kada_upstream_notice": (
+            "咔哒手机版基于王赞开发的开源项目 Mika(Apache-2.0,https://github.com/wangzan101/Mika)修改:"
+            "更换了应用名称、图标、配色、关于页和示例,并加了安全限制(屏上出现人机验证时不去做验证;"
+            "电脑派单、定时等不在手机上发起的任务不发送、不发布、不提交、不删除、不付款)。Mika 的版权声明和许可证见下文。\n"
+            "随安装包分发的 PRoot(GPL-2.0-or-later)、talloc(LGPL-3.0-or-later)以及运行环境里 GPL、LGPL、MPL 软件包的"
+            "对应源码、补丁和编译脚本,放在咔哒手机版发布页 https://github.com/AIMarshallLee/mika/releases ,"
+            "文件名 kada-<版本>-gpl-sources.tar.gz。"
+        ),
     },
 }
 
@@ -146,7 +155,7 @@ def main() -> int:
         if vdir.name not in CUSTOM:
             custom.update({k: CUSTOM["values"][k] for k in OTHER_LOCALES if k in CUSTOM["values"]})
         for key, text in custom.items():
-            attrs = ' translatable="false"' if key == "about_beta_label" else ""
+            attrs = ' translatable="false"' if key in ("about_beta_label", "kada_upstream_notice") else ""
             found[key] = (escape_text(text).replace("\n", "\\n").replace("'", "\\'"), attrs)
         if vdir.name == "values":
             found["app_name"] = ("咔哒", ' translatable="false"')

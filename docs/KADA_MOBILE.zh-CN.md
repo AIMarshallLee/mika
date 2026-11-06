@@ -25,6 +25,9 @@
 | `ui/theme/Colors.kt` | 强调色读构建配置：咔哒用昆仑紫 `#4A265F` | 与咔哒电脑端视觉统一 |
 | `tools/mika/scripts/mika_cli.py` | 环境变量 `MIKA_PACKAGE` 指定手机上的包名 | 电脑端 CLI 能连咔哒（原版写死了 Mika 的目录） |
 | `tools/kada/*` | 资源生成脚本、构建脚本、安装脚本 | 可重复构建 |
+| `core/gate/CaptchaGuard.kt` + `ConfirmDecision` / `ActionExecutor` / `Refusals` | **验证码硬护栏**：模型看的那一屏上挂着人机验证（拖动滑块、拼图、请依次点击……）时，点击、拖动、输入、按键、页面脚本一律不执行，返回 `captcha_refused`；点关闭/返回、返回键、打开别的网址或 App 照常。自主模式也拦。原版只在提示词里说「不要自己解」，真机上助手仍去拖过滑块 | 不绕过网站的人机验证 |
+| `core/action/Approval.kt`（`ApprovalPolicy.outwardNeedsUser`）+ `MikaApp.kt` | 咔哒构建打开：**不是在手机上亲手发起的任务**（电脑派单、定时、渠道、子任务）或无人值守时，发送、发布、提交、删除、下单、付款一律不做（`approval_unavailable`，说明照实写原因）。手机上本人发起的任务行为不变（只有花钱先问）。原版构建开关关着，行为不变 | 电脑派单只读，客户手机上不会被远程发消息 |
+| `.github/workflows/kada-demo.yml` 的 `customer` 任务 | 提交说明带 `[publish-customer]` 或手动运行时：同一个包改用**私有发布密钥**签名（GitHub Secrets `KADA_RELEASE_*`），并打包 GPL/LGPL/MPL 组件的对应源码 `kada-<版本>-gpl-sources.tar.gz`，一起放到预发布 `kada-v0.1.0-customer` | 客户版签名不公开；履行 GPL 源码义务 |
 
 **没有改的（有意保留）**：Kotlin 包名/命名空间 `com.wangzan101.mika`、类名、Intent Action 名（都是显式组件，不冲突）、原版许可证与署名、内部日志标签、文件导出目录 `下载/Mika`（按 App 区分，不串数据）、原版英文提示词里内部称呼的 Mika。
 
@@ -52,12 +55,16 @@ mika connect --device SERIAL --json
 
 - Mika 主项目 Apache-2.0：允许商业二次开发。保留了 `LICENSE`、`NOTICE`、`licenses/THIRD_PARTY_NOTICES.md` 和关于页「开源许可」入口；关于页署名写明「基于王赞开发的开源项目 Mika 二次开发」。
 - 修改过的文件都带「咔哒(昆仑增长)修改」说明（Apache-2.0 第 4(b) 条）。
-- 第三方 GPL/LGPL 组件：PRoot（GPL-2.0+）、talloc（LGPL-3.0+）以独立程序随安装包分发。**正式对外分发咔哒时，须同样提供这些组件的对应源码**（上游做法是在发布页附 `mika-<版本>-gpl-sources.tar.gz`），咔哒发布页需照做。关于页的说明文字仍指向 Mika 发布页，正式版前要改成咔哒自己的发布地址。
-- 签名：演示包用本机调试签名；正式发布换独立发布密钥，安全保存，**不进 GitHub**。API Key、客户资料同样不进仓库、不打进安装包。
+- 第三方 GPL/LGPL 组件：PRoot（GPL-2.0+）、talloc（LGPL-3.0+）以及运行环境里的 GPL/LGPL/MPL 软件包以独立程序随安装包分发。对应源码由 `customer` 构建任务打包成 `kada-<版本>-gpl-sources.tar.gz`，和客户版安装包放在同一个发布页；咔哒「开源许可」页顶部写明了这个位置（`kada_upstream_notice`）。
+- 签名分两种：
+  - **内部测试机**装演示包，签名用仓库里的 `app/debug.keystore`（公开的调试密钥，任何人都能用它签包，所以只给自己的测试机）。
+  - **交给客户**的只用客户版：私有发布密钥（PKCS12，别名 `kada-release`，证书 SHA-256 `0D:A5:00:1A:…:C0:70`），只存在 GitHub 加密 Secrets 和老板 Mac 上的备份（`~/AIcode/kada-mobile/签名密钥-勿外传/`），**不进任何仓库**。两种签名的包不能互相覆盖安装。
+- API Key、客户资料同样不进仓库、不打进安装包。
 
 ## 5. 已知限制（演示版）
 
 - 「反馈问题」仍打开上游 Mika 的 GitHub Issues；「开源仓库」指向上游（作为署名保留）。正式版需换成咔哒自己的反馈渠道。
 - 「检查更新」在咔哒里会显示连不上（已关闭联网检查，属预期）。
 - 部分英文内部提示词仍称呼 Mika，智能体已被告知对用户一律自称咔哒，偶尔仍可能说出 Mika。
-- Mika 原版的「询问模式」只在花钱前确认；发消息、发布、删除不会自动拦。商用前必须在动作执行层加审批（见总指令第八章）。
+- 手机上本人发起的任务里，发消息、发布、删除仍不逐次确认（原版行为，只有花钱先问）；电脑派单、定时、渠道任务里这些动作已一律不做（打开「自主模式」也一样）。
+- 验证码护栏按屏上文字认；验证完全画在图片里、屏上没有任何验证字样时认不出（此时仍有原版提示词约束）。

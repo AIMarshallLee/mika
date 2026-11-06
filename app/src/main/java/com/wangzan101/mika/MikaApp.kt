@@ -338,6 +338,8 @@ class MikaApp : Application(), WebOwner, SandboxOwner, TaskEnvironment.Owner, Ph
         registerActivityLifecycleCallbacks(foreground)
         // 咔哒修改:智能体对用户自称的名字跟 App 名一致
         com.wangzan101.mika.core.agent.SystemPrompt.brandName = BuildConfig.BRAND_NAME
+        // 咔哒(昆仑增长)修改:咔哒构建里,电脑派单、定时、渠道和无人值守的任务不做发送、发布、提交、删除、下单、付款
+        com.wangzan101.mika.core.action.ApprovalPolicy.outwardNeedsUser = BuildConfig.BRAND_NAME != "Mika"
         // 设置 › 网络代理:Mika 自己的连接从第一个请求起就按它走;SOCKS 代理的账号密码经全进程的认证器给
         com.wangzan101.mika.settings.NetProxyStore.get(this)
         com.wangzan101.mika.core.net.NetProxy.shared.installSocksAuth()

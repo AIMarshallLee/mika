@@ -1,6 +1,7 @@
 package com.wangzan101.mika.core.action
 
 import com.wangzan101.mika.core.gate.ConfirmationRequest
+import com.wangzan101.mika.core.risk.IrrevAction
 import com.wangzan101.mika.core.run.Attendance
 import com.wangzan101.mika.core.run.RunOrigin
 import com.wangzan101.mika.core.run.RunProvenance
@@ -53,9 +54,22 @@ sealed interface Approval {
  * (渠道、定时、MCP 发起的)时这些都不做。
  */
 object ApprovalPolicy {
+    /**
+     * 咔哒(昆仑增长)修改:为 true 时,不是用户在手机上亲手发起的运行(电脑派单、定时、渠道、子任务)或无人值守的运行里,
+     * 对外和收不回的动作(发送、发布、提交、删除、下单、付款)一律不做。默认 false 与原版一致;咔哒构建在启动时打开。
+     */
+    @Volatile var outwardNeedsUser: Boolean = false
+
     fun decide(risk: Risk, run: RunProvenance = RunProvenance()): Approval = when {
+        outwardNeedsUser && remote(run) && (risk.level == ActionRisk.External || risk.level == ActionRisk.Irreversible) -> Approval.Deny
         !risk.payment && risk.ask == null -> Approval.Allow
-        run.attendance == Attendance.Unattended || run.origin != RunOrigin.Ui -> Approval.Deny
+        remote(run) -> Approval.Deny
         else -> Approval.Ask
     }
+
+    /** 咔哒(昆仑增长)修改:自主执行时用:这类运行里这个动作(发送、提交、删除、下单、付款)不做。 */
+    fun deniesOutward(action: IrrevAction, run: RunProvenance): Boolean =
+        outwardNeedsUser && remote(run) && action != IrrevAction.other
+
+    private fun remote(run: RunProvenance) = run.attendance == Attendance.Unattended || run.origin != RunOrigin.Ui
 }

@@ -1,5 +1,7 @@
 package com.wangzan101.mika.core.replay
 
+import com.wangzan101.mika.core.action.Refusals
+
 import com.wangzan101.mika.core.action.ActionExecutor
 import com.wangzan101.mika.core.action.ActionOutcome
 import com.wangzan101.mika.core.action.Origin
@@ -95,6 +97,8 @@ class Replayer(
                     }
                     "target_unresolved" -> return diverged("cannot tell which element the tap would hit", seen)
                     "own_app" -> return diverged("it acts on Mika itself", seen)
+                    // 咔哒(昆仑增长)修改:验证码硬护栏拦下的一步
+                    Refusals.CAPTCHA -> return diverged("the screen shows a human-verification check", seen)
                     // #217:非 Ui/无人值守来源回放到付款步,审批策略自动拒绝——这轮永远等
                     // 不来同意,不是「等确认」,交还模型向用户说明后按未完成收尾。
                     "approval_unavailable" -> return diverged(

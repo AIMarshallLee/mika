@@ -1,5 +1,7 @@
 package com.wangzan101.mika.core.action
 
+import com.wangzan101.mika.core.risk.IrrevAction
+
 import com.wangzan101.mika.core.tool.Risk
 import com.wangzan101.mika.core.gate.ConfirmationGate
 import com.wangzan101.mika.core.gate.Irreversible
@@ -144,6 +146,8 @@ class ActionExecutor(
             is Decision.Denied -> return approvalUnavailable(call, args, origin, before, d.hit, followUp)
             Decision.Unresolved -> return refuse("target_unresolved", origin, before)
             Decision.OwnApp -> return ownApp(call, args, origin, before, followUp)
+            // 咔哒(昆仑增长)修改:验证码硬护栏
+            is Decision.Captcha -> return captcha(call, args, origin, before, d.matched, followUp)
             else -> Unit
         }
         // 对外动作:和同一网站、App 里的上一次隔开(等的时候任务还能取消,动作还没开始)
@@ -312,6 +316,19 @@ class ActionExecutor(
             recorder.result(origin.step, call.name, tools.verb(call.name), content, tools.portRecord(call.name, args), null, null, 0, origin.policy.source, call.id)
         }
         return ActionOutcome.Refused(Refusals.OWN_APP, content, before)
+    }
+
+    /** 咔哒(昆仑增长)修改:屏上挂着人机验证,这一步在做验证,不执行;和 [ownApp] 一样记进运行记录交给模型。 */
+    private fun captcha(
+        call: Part.ToolCall, args: JsonObject, origin: Origin, before: List<GuardVerdict>, matched: String, followUp: FollowUp,
+    ): ActionOutcome {
+        val hit = Irreversible(IrrevAction.other, matched)
+        val content = Refusals.content(Refusals.CAPTCHA, origin.policy.refusals, before, hit, null)
+        if (origin.policy.recordsRefusal) {
+            followUp.refused(content)
+            recorder.result(origin.step, call.name, tools.verb(call.name), content, tools.portRecord(call.name, args), null, null, 0, origin.policy.source, call.id)
+        }
+        return ActionOutcome.Refused(Refusals.CAPTCHA, content, before, hit)
     }
 
     private fun refuse(code: String, origin: Origin, before: List<GuardVerdict>) =
