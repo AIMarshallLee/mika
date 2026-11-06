@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 咔哒(昆仑增长)修改:白标构建在开源许可页顶部显示的上游说明;原版为空,不显示 -->
+    <string name="kada_upstream_notice" translatable="false"></string>
     <!-- 咔哒(昆仑增长)修改:版本号后的测试版标记,咔哒构建覆盖成「演示版」 -->
     <string name="about_beta_label" translatable="false">Beta</string>
     <string name="about_tagline">Your personal assistant on your phone, getting things done for you</string>

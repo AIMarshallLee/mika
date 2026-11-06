@@ -88,8 +88,16 @@ fun LicensesScreen(onBack: () -> Unit) {
         runCatching { context.assets.open("runtime/packages.json").use { Licenses.runtimePackages(it.readBytes().decodeToString()) } }
             .getOrDefault(emptyList())
     }
-    val thirdParty = Licenses.ENTRIES.filter { it.name != "Mika" } + runtime
+    // 咔哒(昆仑增长)修改:咔哒构建里 Mika 本身也是一个开源组件,要列出来(Apache-2.0 署名)
+    val thirdParty = Licenses.ENTRIES.filter { it.name != "Mika" || com.wangzan101.mika.BuildConfig.BRAND_NAME != "Mika" } + runtime
+    val upstreamNotice = stringResource(R.string.kada_upstream_notice)
     SubPage(AboutCopy.LICENSE_TITLE, onBack) {
+        // 咔哒(昆仑增长)修改:说明本应用基于 Mika 修改、改了什么(Apache-2.0 第 4 条);原版构建这段文字为空,不显示
+        if (upstreamNotice.isNotBlank()) {
+            MikaCard(Modifier.padding(bottom = 12.dp).testTag("kada-upstream-notice")) {
+                Text(upstreamNotice, Modifier.padding(16.dp), style = MikaType.Hint, color = MikaTheme.colors.ink2)
+            }
+        }
         if (licenseText.isNotEmpty()) {
             MikaCard(Modifier.padding(bottom = 12.dp).testTag("license-text")) {
                 Text(

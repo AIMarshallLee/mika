@@ -2,7 +2,10 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">يتيح هذا الإذن للنظام لـ Kada قراءة ما يظهر على أي شاشة والتفاعل معه. لا تستخدم Kada هذا الإذن إلا على شاشتها الافتراضية لتنفيذ المهام التي تطلبها منها، ولا تعمل على شاشتك الرئيسية إلا عندما تسند إليها مهمة عليها.</string>
+    <string name="about_author">By Kunlun Growth · © 2026</string>
     <string name="about_data_note">كل ما ترسله إلى Kada — الرسائل ومحتوى الشاشة ولقطات الشاشة — يُرسل فقط إلى موفر النموذج الذي أعددته. لا تملك Kada خوادم خاصة بها ولا تجمع أي بيانات عنك؛ ولا يتصل التحقق من التحديثات إلا بـ GitHub.</string>
+    <string name="about_repo">Open-source project Mika</string>
+    <string name="about_repo_sub">Kada mobile is built on it · %1$s</string>
     <string name="about_update_bad_signer">وُقّعت هذه الحزمة بطريقة مختلفة عن Kada المثبتة، لذا لا يمكنها تحديثها. حُذفت. إذا أنشأت Kada بنفسك، فأزل تثبيتها أولاً ثم ثبّت الإصدار الرسمي.</string>
     <string name="about_update_install_hint">بعد التنزيل، انقر على «تثبيت التحديث» وأكّد ذلك في أداة تثبيت النظام. قد تحتاج أولاً إلى السماح لـ Kada بتثبيت تطبيقات غير معروفة.</string>
     <string name="about_update_not_newer">الحزمة التي تم تنزيلها ليست أحدث من Kada المثبتة. حُذفت.</string>
@@ -36,6 +39,10 @@
     <string name="card_see_process">العودة إلى Kada لعرض العملية كاملة</string>
     <string name="card_zoom_hint">تعمل Kada في الخلفية · انقر للإغلاق</string>
     <string name="chat_empty_prompt">ما الذي تريد من Kada أن تفعله؟</string>
+    <string name="chat_example_follow">Open Meituan and look at the 3 top-rated nail salons nearby. Just look, don’t order</string>
+    <string name="chat_example_group_summary">Open Dianping and find 3 beauty salons rated 4.5+, note their names and addresses</string>
+    <string name="chat_example_jobs">Find 5 companies in Huaibei hiring for AI roles recently, with source links</string>
+    <string name="chat_example_multi_step">List the office and customer-service apps installed on my phone</string>
     <string name="chat_placeholder_answer">أجب عن سؤال Kada</string>
     <string name="chat_quoting_mika">اقتباس من Kada: %1$s</string>
     <string name="chat_unlock_body">هاتفك مقفل. ستتابع Kada العمل بعد إلغاء قفله.</string>

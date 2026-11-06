@@ -104,7 +104,9 @@ fun AboutScreen(
     PageScaffold(AboutCopy.TITLE, onBack) {
         Hero(versionName, build, beta)
 
-        GroupCard {
+        // 咔哒(昆仑增长)修改:咔哒构建的关于页只留一行上游开源项目,不显示原版的检查更新、去 GitHub 反馈和使用说明
+        val upstreamOnly = com.wangzan101.mika.BuildConfig.BRAND_NAME != "Mika"
+        if (!upstreamOnly) GroupCard {
             val v = AboutCopy.checkValue(update)
             ListRow(
                 MikaIcons.Refresh, AboutCopy.CHECK, if (update.hasUpdate) AboutCopy.CHECK_SUB_NEW else AboutCopy.CHECK_SUB, first = true,
@@ -121,12 +123,12 @@ fun AboutScreen(
             }
             ListRow(MikaIcons.Lines, AboutCopy.CHANGELOG, AboutCopy.CHANGELOG_SUB, onClick = { sheet = AboutSheet.Changelog }) { RowChevron() }
         }
-        GroupCard {
+        if (!upstreamOnly) GroupCard {
             ListRow(MikaIcons.Bug, AboutCopy.FEEDBACK, AboutCopy.FEEDBACK_SUB, first = true, onClick = { sheet = AboutSheet.Feedback }) { RowChevron() }
         }
         GroupCard {
             ListRow(MikaIcons.Code, AboutCopy.REPO, AboutCopy.REPO_SUB, first = true, onClick = { onOpenUrl(MikaLinks.REPO) }) { ExternalMark() }
-            ListRow(MikaIcons.Book, AboutCopy.GUIDE, AboutCopy.GUIDE_SUB, onClick = { onOpenUrl(MikaLinks.README) }) { ExternalMark() }
+            if (!upstreamOnly) ListRow(MikaIcons.Book, AboutCopy.GUIDE, AboutCopy.GUIDE_SUB, onClick = { onOpenUrl(MikaLinks.README) }) { ExternalMark() }
         }
 
         Row(

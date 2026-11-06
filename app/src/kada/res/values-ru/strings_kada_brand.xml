@@ -2,7 +2,10 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">Это системное разрешение позволяет Kada читать и использовать содержимое любого экрана. Kada применяет его только на своём виртуальном экране, чтобы выполнять ваши задачи, а на основном экране действует, только когда вы сами поручили ей задачу там.</string>
+    <string name="about_author">By Kunlun Growth · © 2026</string>
     <string name="about_data_note">Всё, что вы отправляете Kada (сообщения, содержимое экрана и снимки экрана), уходит только провайдеру модели, которого вы настроили. У Kada нет собственных серверов, и она не собирает ваши данные; при проверке обновлений обращение идёт только к GitHub.</string>
+    <string name="about_repo">Open-source project Mika</string>
+    <string name="about_repo_sub">Kada mobile is built on it · %1$s</string>
     <string name="about_update_bad_signer">Подпись этого пакета отличается от подписи установленной Kada, поэтому обновить её им нельзя. Пакет удалён. Если вы собирали Kada сами, сначала удалите её, а затем установите официальную версию.</string>
     <string name="about_update_install_hint">Когда загрузка завершится, нажмите «Установить обновление» и подтвердите в системном установщике. Возможно, сначала придётся разрешить Kada установку неизвестных приложений.</string>
     <string name="about_update_not_newer">Скачанный пакет не новее установленной Kada. Он удалён.</string>
@@ -37,6 +40,10 @@
     <string name="card_see_process">Вернуться в Kada, чтобы увидеть весь ход работы</string>
     <string name="card_zoom_hint">Kada работает в фоне · нажмите, чтобы закрыть</string>
     <string name="chat_empty_prompt">Что поручить Kada?</string>
+    <string name="chat_example_follow">Open Meituan and look at the 3 top-rated nail salons nearby. Just look, don’t order</string>
+    <string name="chat_example_group_summary">Open Dianping and find 3 beauty salons rated 4.5+, note their names and addresses</string>
+    <string name="chat_example_jobs">Find 5 companies in Huaibei hiring for AI roles recently, with source links</string>
+    <string name="chat_example_multi_step">List the office and customer-service apps installed on my phone</string>
     <string name="chat_placeholder_answer">Ответьте на вопрос Kada</string>
     <string name="chat_quoting_mika">Цитата Kada: %1$s</string>
     <string name="chat_unlock_body">Телефон заблокирован. Kada продолжит, как только вы его разблокируете.</string>
