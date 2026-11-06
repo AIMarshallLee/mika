@@ -2,10 +2,12 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">Это системное разрешение позволяет Kada читать и использовать содержимое любого экрана. Kada применяет его только на своём виртуальном экране, чтобы выполнять ваши задачи, а на основном экране действует, только когда вы сами поручили ей задачу там.</string>
-    <string name="about_author">By Kunlun Growth · © 2026</string>
     <string name="about_data_note">Всё, что вы отправляете Kada (сообщения, содержимое экрана и снимки экрана), уходит только провайдеру модели, которого вы настроили. У Kada нет собственных серверов, и она не собирает ваши данные; при проверке обновлений обращение идёт только к GitHub.</string>
-    <string name="about_repo">Open-source project Mika</string>
-    <string name="about_repo_sub">Kada mobile is built on it · %1$s</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_guide">Growth Flywheel AI website</string>
+    <string name="about_guide_sub">Guide, case studies and contact</string>
+    <string name="about_repo">Source code</string>
+    <string name="about_repo_sub">%1$s · built on Mika</string>
     <string name="about_update_bad_signer">Подпись этого пакета отличается от подписи установленной Kada, поэтому обновить её им нельзя. Пакет удалён. Если вы собирали Kada сами, сначала удалите её, а затем установите официальную версию.</string>
     <string name="about_update_install_hint">Когда загрузка завершится, нажмите «Установить обновление» и подтвердите в системном установщике. Возможно, сначала придётся разрешить Kada установку неизвестных приложений.</string>
     <string name="about_update_not_newer">Скачанный пакет не новее установленной Kada. Он удалён.</string>
@@ -40,10 +42,7 @@
     <string name="card_see_process">Вернуться в Kada, чтобы увидеть весь ход работы</string>
     <string name="card_zoom_hint">Kada работает в фоне · нажмите, чтобы закрыть</string>
     <string name="chat_empty_prompt">Что поручить Kada?</string>
-    <string name="chat_example_follow">Open Meituan and look at the 3 top-rated nail salons nearby. Just look, don’t order</string>
-    <string name="chat_example_group_summary">Open Dianping and find 3 beauty salons rated 4.5+, note their names and addresses</string>
-    <string name="chat_example_jobs">Find 5 companies in Huaibei hiring for AI roles recently, with source links</string>
-    <string name="chat_example_multi_step">List the office and customer-service apps installed on my phone</string>
+    <string name="chat_example_follow">Open WeChat, search for the official account 帅厂长, and follow it.</string>
     <string name="chat_placeholder_answer">Ответьте на вопрос Kada</string>
     <string name="chat_quoting_mika">Цитата Kada: %1$s</string>
     <string name="chat_unlock_body">Телефон заблокирован. Kada продолжит, как только вы его разблокируете.</string>
@@ -59,6 +58,7 @@
     <string name="dev_grounding_sub">Включите, когда проверено, что модель зрения %1$s точно находит элементы; пока выключено, перед нажатием на отмеченные ею места Kada нужны другие подтверждения.</string>
     <string name="dev_group">Как работает Kada</string>
     <string name="dev_note">Эти переключатели влияют на то, как и как быстро работает Kada. Обычно лучше оставить значения по умолчанию.</string>
+    <string name="diagnostics_copy_sub">Version, device and settings — copy and send to Marshall@kunlungrowth.com</string>
     <string name="explain_a11y_not_running_body">В системных настройках служба специальных возможностей Kada показана как включённая, но на самом деле не работает (так часто бывает после принудительной остановки Kada). Выключите Kada в настройках специальных возможностей и снова включите.</string>
     <string name="explain_a11y_off_body">Kada использует службу специальных возможностей, чтобы читать свой виртуальный экран и управлять им. Найдите Kada в разделе «Специальные возможности» системных настроек (на некоторых телефонах — в разделе «Скачанные приложения» или «Установленные службы») и включите её.</string>
     <string name="explain_focus_body">В Android 12–13 фоновая работа может влиять на фокус вашего экрана: когда Kada открывает приложение или прокручивает виртуальный экран, поле, в которое вы вводите текст, может ненадолго потерять фокус, и придётся нажать на него ещё раз. Начиная с Android 14 у виртуального экрана свой фокус. На этом телефоне Android %1$s; задачи всё равно работают нормально.</string>
@@ -81,8 +81,9 @@
     <string name="issue_body">- Устройство: %1$s\n- Версия Android: %2$s (SDK %3$d)\n- Версия Kada: %4$s (сборка %5$s)\n\n### Что пошло не так\n\n\n### Что вы делали\n\n\n### Что ожидали\n\n\n### Диагностика\n(По желанию) В Kada откройте «О приложении» › «Отправить отзыв» › «Скопировать диагностику» и вставьте её сюда\n\n</string>
     <string name="kept_reason_app_exit">Kada закрыта</string>
     <string name="language_system_detail">Используется язык системы, если Kada его знает, иначе английский</string>
+    <string name="mcp_cli_install_prompt">Следуя https://github.com/AIMarshallLee/mika/blob/main/docs/agent-quickstart.en.md, установи Mika CLI или Skill для этого агента. Используй способ подключения, выбранный на телефоне: для USB это авторизованный ADB; для Wi-Fi или частного VPN это HTTP-адрес и закрытый файл с токеном. Выполни connect, чтобы проверить подключение. Если установлен только Skill, используй его встроенный скрипт. Не отправляй задачи на телефон и не выводи токены в разговор.</string>
     <string name="mcp_servers_empty_sub">Добавьте внешний MCP-сервер, чтобы Kada могла использовать его инструменты.</string>
-    <string name="mcp_usb_client_instructions">Добавь на этом компьютере сервер MCP типа Streamable HTTP по адресу http://127.0.0.1:%1$d/mcp. В заголовке Authorization укажи Bearer и токен, который вывела команда запуска Kada. Не выводи токен в разговор. Подключись или обнови список инструментов и проверь, что время запроса на телефоне обновилось. Руководство: https://github.com/wangzan101/Mika/blob/main/docs/mcp.en.md</string>
+    <string name="mcp_usb_client_instructions">Добавь на этом компьютере сервер MCP типа Streamable HTTP по адресу http://127.0.0.1:%1$d/mcp. В заголовке Authorization укажи Bearer и токен, который вывела команда запуска Kada. Не выводи токен в разговор. Подключись или обнови список инструментов и проверь, что время запроса на телефоне обновилось. Руководство: https://github.com/AIMarshallLee/mika/blob/main/docs/mcp.en.md</string>
     <string name="memory_learn_sub">Чему Kada научилась, используется только после вашего одобрения</string>
     <string name="memory_unreadable">Прежнюю память прочитать не удалось: она отложена в сторону, и Kada начинает с чистого листа.</string>
     <string name="memory_use_sub">Когда выключено, Kada не читает память и ничего в неё не сохраняет</string>

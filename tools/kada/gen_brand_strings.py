@@ -39,52 +39,72 @@ def tidy_cjk(text: str, name: str) -> str:
 # 不在网址、路径、类名里:前面不是 / . 字母数字,后面不是 / 字母数字
 WORD = re.compile(r"(?<![/.A-Za-z0-9_])Mika(?![/A-Za-z0-9_])")
 
+# ── 昆仑增长自己的账号与联系方式(白标时换掉原作者的) ──────────────────────────
+# 公众号:示例「关注我的公众号」用的名字;改名后重新运行脚本
+MP_NAME = "帅厂长"
+OWN_GROUP = "老板增长实战群"
+SERVICE_WECHAT = "MarshallPD"
+SERVICE_EMAIL = "Marshall@kunlungrowth.com"
+
+# 原作者仓库的网址统一换成昆仑增长的 Fork(文档内容相同)
+UPSTREAM_URL = "github.com/wangzan101/Mika"
+OWN_URL = "github.com/AIMarshallLee/mika"
+
+
 CUSTOM = {
     "values-zh": {
         "about_tagline": "咔哒 AI 工作助手 · 增长飞轮 AI 出品",
-        "about_author": "昆仑增长 出品 · © 2026",
-        "about_repo": "开源项目 Mika",
-        "about_repo_sub": "咔哒手机版基于它开发 · %1$s",
-        # 对话页示例:换成咔哒自己的业务场景,都写成只读(只看、只查,不下单不发消息)
-        "chat_example_follow": "打开美团，看看附近评分最高的 3 家美甲店，只看不下单",
-        "chat_example_group_summary": "打开大众点评，找 3 家评分 4.5 以上的美业门店，记下店名和地址",
-        "chat_example_jobs": "在网上查淮北最近在招 AI 相关岗位的 5 家公司，附上来源网址",
-        "chat_example_multi_step": "看看我手机里装了哪些办公和客服类 App，列个清单",
+        "about_author": "昆仑增长 出品 · 基于王赞开发的开源项目 Mika(Apache-2.0)二次开发",
+        "about_repo": "开源代码",
+        "about_repo_sub": "%1$s · 基于 Mika 二次开发",
+        "about_guide": "增长飞轮 AI 官网",
+        "about_guide_sub": "使用说明、落地案例和联系方式",
+        "about_feedback_sub": f"客服微信 {SERVICE_WECHAT} · 复制诊断信息",
+        "about_feedback_sheet_sub": f"遇到问题、有想法：加客服微信 {SERVICE_WECHAT}，或发邮件到 {SERVICE_EMAIL}；也可以在 GitHub 提问题",
+        "about_feedback_github_sub": "报 Bug、提需求，在昆仑增长的仓库里跟踪进度",
+        "diagnostics_copy_sub": f"版本、机型和设置状态，复制后发给客服微信 {SERVICE_WECHAT}",
         "about_check_sub": "演示版不在线更新,新版本由昆仑增长提供",
         "about_data_note": "你发给咔哒的话、屏幕内容和截图，只发给你自己设置的模型服务商。咔哒演示版没有自己的服务器，不收集你的数据，也不自动检查更新。",
         "welcome_title": "你好，我是咔哒",
         "welcome_lead": "咔哒 AI 工作助手，在你的手机上替你办事。\n告诉我要做什么，我在后台把它做完。",
+        # 对话页的示例:换成增长飞轮 AI 自己的账号和获客场景
+        "chat_example_follow": f"打开微信，搜索公众号「{MP_NAME}」，点击关注",
+        "chat_example_group_summary": f"帮我总结一下「{OWN_GROUP}」今天都聊了些啥",
+        "chat_example_jobs": "用网页在高德地图搜淮北的家装公司，整理前 5 家的名称、电话和地址",
+        "chat_example_multi_step": "打开抖音搜「AI 获客」，看前 5 条视频，总结它们各讲了什么",
+    },
+    "values-b+zh+Hant": {
+        "about_author": "昆侖增長 出品 · 基於王贊開發的開源專案 Mika(Apache-2.0)二次開發",
+        "about_repo": "開源程式碼",
+        "about_repo_sub": "%1$s · 基於 Mika 二次開發",
+        "about_guide": "增長飛輪 AI 官網",
+        "about_guide_sub": "使用說明、落地案例和聯絡方式",
+        "about_feedback_sub": f"客服微信 {SERVICE_WECHAT} · 複製診斷資訊",
+        "about_feedback_sheet_sub": f"遇到問題、有想法：加客服微信 {SERVICE_WECHAT}，或寄信到 {SERVICE_EMAIL}；也可以在 GitHub 提問題",
+        "diagnostics_copy_sub": f"版本、機型和設定狀態，複製後發給客服微信 {SERVICE_WECHAT}",
+        "chat_example_follow": f"開啟微信，搜尋公眾號「{MP_NAME}」，點擊關注",
+        "chat_example_group_summary": f"幫我總結一下「{OWN_GROUP}」今天都聊了些啥",
     },
     "values": {
         # 原版里是不翻译的字符串,只能在默认语言里覆盖:所有语言都显示「演示版」
         "about_beta_label": "演示版",
         "about_tagline": "Kada AI work assistant · by Growth Flywheel AI",
-        "about_author": "By Kunlun Growth · © 2026",
-        "about_repo_sub": "Kada mobile is built on it · %1$s",
-        # 只有中文和英文写了说明;所有语言共用这一份,中英双语
-        "kada_upstream_notice": "咔哒手机版由昆仑增长基于开源项目 Mika(github.com/wangzan101/Mika,Copyright 2026 wangzan101)修改而来,遵循 Apache-2.0 许可;修改内容:应用名称、图标、配色、界面文案、安装包标识,关闭了原版的在线更新。随包发布的 PRoot、talloc 未作修改,源码见 Mika 发布页。\n\nKada Mobile by Kunlun Growth is a modified version of the open-source Mika (github.com/wangzan101/Mika, Copyright 2026 wangzan101), licensed under Apache-2.0. Changed: app name, icon, colors, UI text and package id; online updates of the original are turned off.",
-        "chat_example_follow": "Open Meituan and look at the 3 top-rated nail salons nearby. Just look, don’t order",
-        "chat_example_group_summary": "Open Dianping and find 3 beauty salons rated 4.5+, note their names and addresses",
-        "chat_example_jobs": "Find 5 companies in Huaibei hiring for AI roles recently, with source links",
-        "chat_example_multi_step": "List the office and customer-service apps installed on my phone",
+        "about_author": "By Kunlun Growth · built on the open-source Mika by Wang Zan (Apache-2.0)",
         "about_check_sub": "The demo build does not update online",
-        "about_repo": "Open-source project Mika",
+        "about_repo": "Source code",
+        "about_repo_sub": "%1$s · built on Mika",
+        "about_guide": "Growth Flywheel AI website",
+        "about_guide_sub": "Guide, case studies and contact",
+        "about_feedback_sheet_sub": f"Problems or ideas? Message us on WeChat ({SERVICE_WECHAT}), email {SERVICE_EMAIL}, or open a GitHub issue.",
+        "diagnostics_copy_sub": f"Version, device and settings — copy and send to {SERVICE_EMAIL}",
         "welcome_title": "Hi, I’m Kada",
-    },
-    "values-b+zh+Hant": {
-        "about_author": "昆侖增長 出品 · © 2026",
-        "about_repo": "開源專案 Mika",
-        "about_repo_sub": "咔噠手機版基於它開發 · %1$s",
-        "chat_example_follow": "打開美團，看看附近評分最高的 3 家美甲店，只看不下單",
-        "chat_example_group_summary": "打開大眾點評，找 3 家評分 4.5 以上的美業門店，記下店名和地址",
-        "chat_example_jobs": "在網上查淮北最近在招 AI 相關職缺的 5 家公司，附上來源網址",
-        "chat_example_multi_step": "看看我手機裡裝了哪些辦公和客服類 App，列個清單",
+        "chat_example_follow": f"Open WeChat, search for the official account {MP_NAME}, and follow it.",
     },
 }
 
-# 其他语言(阿拉伯、西班牙、日、韩等)没有单独写的,作者行和示例统一用英文版,不再出现原版作者和原版示例
-ALL_LOCALES = ("about_author", "about_repo", "about_repo_sub", "chat_example_follow", "chat_example_group_summary",
-               "chat_example_jobs", "chat_example_multi_step")
+# 其他语言(日、韩、西……)里原作者的账号示例和「告诉作者」,统一用英文版覆盖
+OTHER_LOCALES = ("chat_example_follow", "about_feedback_sheet_sub", "diagnostics_copy_sub",
+                 "about_repo", "about_repo_sub", "about_guide", "about_guide_sub")
 
 
 def escape_text(s: str) -> str:
@@ -112,20 +132,21 @@ def main() -> int:
         for f in sorted(vdir.glob("strings*.xml")):
             for el in ET.parse(f).getroot().findall("string"):
                 raw = inner_xml(el)
-                if not WORD.search(raw) or el.get("name") in KEEP:
-                    continue
                 key = el.get("name")
+                has_url = UPSTREAM_URL in raw
+                if not has_url and (not WORD.search(raw) or key in KEEP):
+                    continue
                 attrs = ' translatable="false"' if el.get("translatable") == "false" else ""
-                text = WORD.sub(name, raw)
+                text = raw if key in KEEP else WORD.sub(name, raw)
+                text = text.replace(UPSTREAM_URL, OWN_URL)
                 if vdir.name in NAME:
                     text = tidy_cjk(text, name)
                 found[key] = (text, attrs)
         custom = dict(CUSTOM.get(vdir.name, {}))
-        for key in ALL_LOCALES:
-            if key not in custom and vdir.name != "values":
-                custom[key] = CUSTOM["values"][key]
+        if vdir.name not in CUSTOM:
+            custom.update({k: CUSTOM["values"][k] for k in OTHER_LOCALES if k in CUSTOM["values"]})
         for key, text in custom.items():
-            attrs = ' translatable="false"' if key in ("about_beta_label", "kada_upstream_notice") else ""
+            attrs = ' translatable="false"' if key == "about_beta_label" else ""
             found[key] = (escape_text(text).replace("\n", "\\n").replace("'", "\\'"), attrs)
         if vdir.name == "values":
             found["app_name"] = ("咔哒", ' translatable="false"')

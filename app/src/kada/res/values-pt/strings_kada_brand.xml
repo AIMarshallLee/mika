@@ -2,10 +2,12 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">Esta permissão do sistema permite que o Kada leia e opere o que aparece em qualquer tela. O Kada a usa apenas na tela virtual dele para fazer as tarefas que você pedir, e só age na sua tela principal quando você entrega uma tarefa lá.</string>
-    <string name="about_author">By Kunlun Growth · © 2026</string>
     <string name="about_data_note">O que você envia ao Kada — mensagens, conteúdo da tela e capturas de tela — vai apenas para o provedor de modelo que você configurou. O Kada não tem servidores próprios e não coleta nenhum dado seu; a verificação de atualizações só acessa o GitHub.</string>
-    <string name="about_repo">Open-source project Mika</string>
-    <string name="about_repo_sub">Kada mobile is built on it · %1$s</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_guide">Growth Flywheel AI website</string>
+    <string name="about_guide_sub">Guide, case studies and contact</string>
+    <string name="about_repo">Source code</string>
+    <string name="about_repo_sub">%1$s · built on Mika</string>
     <string name="about_update_bad_signer">Este pacote tem uma assinatura diferente da do Kada instalado, então não pode atualizá-lo. Ele foi excluído. Se você compilou o Kada por conta própria, desinstale-o primeiro e depois instale a versão oficial.</string>
     <string name="about_update_install_hint">Quando o download terminar, toque em “Instalar atualização” e confirme no instalador do sistema. Talvez seja preciso antes permitir que o Kada instale apps desconhecidos.</string>
     <string name="about_update_not_newer">O pacote baixado não é mais novo que o Kada instalado. Ele foi excluído.</string>
@@ -39,10 +41,7 @@
     <string name="card_see_process">Voltar ao Kada para ver o processo completo</string>
     <string name="card_zoom_hint">O Kada está trabalhando em segundo plano · toque para fechar</string>
     <string name="chat_empty_prompt">O que o Kada deve fazer?</string>
-    <string name="chat_example_follow">Open Meituan and look at the 3 top-rated nail salons nearby. Just look, don’t order</string>
-    <string name="chat_example_group_summary">Open Dianping and find 3 beauty salons rated 4.5+, note their names and addresses</string>
-    <string name="chat_example_jobs">Find 5 companies in Huaibei hiring for AI roles recently, with source links</string>
-    <string name="chat_example_multi_step">List the office and customer-service apps installed on my phone</string>
+    <string name="chat_example_follow">Open WeChat, search for the official account 帅厂长, and follow it.</string>
     <string name="chat_placeholder_answer">Responda à pergunta do Kada</string>
     <string name="chat_quoting_mika">Citando o Kada: %1$s</string>
     <string name="chat_unlock_body">Seu celular está bloqueado. O Kada continuará quando você o desbloquear.</string>
@@ -58,6 +57,7 @@
     <string name="dev_grounding_sub">Ative depois de testar que o modelo de visão %1$s localiza as coisas com precisão; desligado, as posições que ele marca precisam de outra evidência antes de o Kada tocar nelas.</string>
     <string name="dev_group">Como o Kada trabalha</string>
     <string name="dev_note">Estas opções afetam como e com que rapidez o Kada trabalha. Normalmente, deixe nos valores padrão.</string>
+    <string name="diagnostics_copy_sub">Version, device and settings — copy and send to Marshall@kunlungrowth.com</string>
     <string name="explain_a11y_not_running_body">As configurações do sistema mostram o serviço de acessibilidade do Kada como ativado, mas ele não está realmente em execução (isso costuma acontecer depois que o Kada é forçado a parar). Desative o Kada nas configurações de acessibilidade e ative de novo.</string>
     <string name="explain_a11y_off_body">O Kada usa o serviço de acessibilidade para ler e controlar a própria tela virtual. Encontre o Kada em Acessibilidade nas configurações do sistema (em alguns celulares fica em “Apps baixados” ou “Serviços instalados”) e ative.</string>
     <string name="explain_focus_body">No Android 12–13, o trabalho em segundo plano pode afetar o foco da sua tela: quando o Kada abre um app ou rola a tela virtual, o campo em que você está digitando pode perder o foco por instantes e precisar de outro toque. A partir do Android 14, a tela virtual tem foco próprio. Este celular roda o Android %1$s; as tarefas continuam funcionando normalmente.</string>
@@ -80,8 +80,9 @@
     <string name="issue_body">- Dispositivo: %1$s\n- Versão do Android: %2$s (SDK %3$d)\n- Versão do Kada: %4$s (build %5$s)\n\n### O que deu errado\n\n\n### O que você fez\n\n\n### O que você esperava\n\n\n### Diagnóstico\n(Opcional) No Kada, abra Sobre › Enviar feedback › Copiar diagnóstico e cole aqui\n\n</string>
     <string name="kept_reason_app_exit">o Kada foi encerrado</string>
     <string name="language_system_detail">Usa o idioma do sistema se o Kada o tiver; caso contrário, inglês</string>
+    <string name="mcp_cli_install_prompt">Siga https://github.com/AIMarshallLee/mika/blob/main/docs/agent-quickstart.en.md para instalar a CLI do Mika ou a Skill para este agente. Use o método de conexão escolhido no celular: USB usa o ADB autorizado; Wi-Fi/VPN privada usa o endereço HTTP e um arquivo de token privado. Execute connect para verificar a conexão. Com apenas a Skill, use o script incluído nela. Não envie tarefas ao celular nem exiba tokens na conversa.</string>
     <string name="mcp_servers_empty_sub">Adicione um servidor MCP externo para que o Kada use as ferramentas dele.</string>
-    <string name="mcp_usb_client_instructions">Adicione um servidor MCP Streamable HTTP em http://127.0.0.1:%1$d/mcp neste computador. Defina o cabeçalho Authorization como Bearer seguido do token exibido pelo comando de início do Kada. Não exiba o token na conversa. Conecte ou atualize a lista de ferramentas e confira se o horário da solicitação no celular é atualizado. Guia: https://github.com/wangzan101/Mika/blob/main/docs/mcp.en.md</string>
+    <string name="mcp_usb_client_instructions">Adicione um servidor MCP Streamable HTTP em http://127.0.0.1:%1$d/mcp neste computador. Defina o cabeçalho Authorization como Bearer seguido do token exibido pelo comando de início do Kada. Não exiba o token na conversa. Conecte ou atualize a lista de ferramentas e confira se o horário da solicitação no celular é atualizado. Guia: https://github.com/AIMarshallLee/mika/blob/main/docs/mcp.en.md</string>
     <string name="memory_learn_sub">O que o Kada aprende só é usado depois que você aceitar</string>
     <string name="memory_unreadable">Não foi possível ler a memória anterior; ela foi separada e o Kada começa do zero.</string>
     <string name="memory_use_sub">Desativado, o Kada não lê nem salva memória</string>

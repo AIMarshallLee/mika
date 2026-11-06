@@ -19,6 +19,8 @@
 | `McpSettings.kt` | 电脑连接默认端口：原版 8765，咔哒 18765 | 两个 App 同机开启电脑连接时不抢端口 |
 | `SystemPrompt.kt`（core） | 智能体对用户自称咔哒；原版提示词一字不变 | 演示时 AI 不自称 Mika |
 | `ChatCopy` / `ChatDrawer` / `AboutScreen` / `TaskService` / 悬浮胶囊 | 写死的「Mika」改读 `BuildConfig.BRAND_NAME` | 顶栏、侧栏、通知、悬浮胶囊显示咔哒 |
+| `MikaLinks.kt` + BuildConfig `REPO_URL` / `GUIDE_URL` | 关于页「开源代码」「反馈问题」指向昆仑增长的 Fork `AIMarshallLee/mika`，「使用说明」指向增长飞轮 AI 官网 kunlungrowth.cn；原版构建地址不变 | 反馈不再发到原作者仓库 |
+| `tools/kada/gen_brand_strings.py` 第二轮 | 对话页示例换成自己的账号与获客场景（微信关注公众号「帅厂长」、总结「老板增长实战群」、高德找淮北家装公司、抖音搜「AI 获客」）；反馈说明改成客服微信 MarshallPD / 邮箱 Marshall@kunlungrowth.com；界面里原作者仓库网址统一换成 Fork；其他语言里原作者的 X 账号示例一并覆盖。公众号名字在脚本 `MP_NAME` 里，改名后重跑即可 | 界面里不再出现原作者的个人账号与反馈入口 |
 | `AboutCopy` + `strings_about.xml` | 版本号后的「Beta」标记改为资源，咔哒显示「演示版」 | 明确标注 Demo |
 | `ui/theme/Colors.kt` | 强调色读构建配置：咔哒用昆仑紫 `#4A265F` | 与咔哒电脑端视觉统一 |
 | `tools/mika/scripts/mika_cli.py` | 环境变量 `MIKA_PACKAGE` 指定手机上的包名 | 电脑端 CLI 能连咔哒（原版写死了 Mika 的目录） |

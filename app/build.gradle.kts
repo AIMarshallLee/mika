@@ -30,6 +30,9 @@ android {
         buildConfigField("boolean", "UPDATE_CHECK", "true")
         buildConfigField("long", "ACCENT_LIGHT", "0xFF0A7CFFL")
         buildConfigField("long", "ACCENT_DARK", "0xFF3D97FFL")
+        // 咔哒(昆仑增长)修改:关于页「开源仓库 / 反馈问题」用的仓库地址和「使用说明」地址,按构建类型给
+        buildConfigField("String", "REPO_URL", "\"https://github.com/wangzan101/Mika\"")
+        buildConfigField("String", "GUIDE_URL", "\"https://github.com/wangzan101/Mika#readme\"")
     }
 
     // 沙箱程序只有 arm64 版本(jniLibs/arm64-v8a);APK 不限 ABI,别的设备照常安装、显示「此设备不支持沙箱」。
@@ -87,6 +90,9 @@ android {
             // 昆仑紫 #4A265F(和咔哒电脑端同一个主题色);深色模式用提亮的同色相紫,保证对比度
             buildConfigField("long", "ACCENT_LIGHT", "0xFF4A265FL")
             buildConfigField("long", "ACCENT_DARK", "0xFFB58BD6L")
+            // 反馈、开源仓库指向昆仑增长的 Fork;使用说明指向增长飞轮 AI 官网
+            buildConfigField("String", "REPO_URL", "\"https://github.com/AIMarshallLee/mika\"")
+            buildConfigField("String", "GUIDE_URL", "\"https://kunlungrowth.cn\"")
         }
     }
 

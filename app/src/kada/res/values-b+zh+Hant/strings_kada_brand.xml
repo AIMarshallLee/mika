@@ -2,10 +2,14 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">這項系統權限能讓咔噠讀取和操作任何螢幕上的內容。咔噠只在它自己的虛擬螢幕上用它來完成你交給它的任務；只有你把主螢幕上的任務交給它時，才會在主螢幕上操作。</string>
-    <string name="about_author">昆侖增長 出品 · © 2026</string>
+    <string name="about_author">昆侖增長 出品 · 基於王贊開發的開源專案 Mika(Apache-2.0)二次開發</string>
     <string name="about_data_note">你發給咔噠的話、螢幕內容和截圖，只發給你自己設定的模型服務商。咔噠沒有自己的伺服器，不收集你的資料；檢查更新時只連線 GitHub。</string>
-    <string name="about_repo">開源專案 Mika</string>
-    <string name="about_repo_sub">咔噠手機版基於它開發 · %1$s</string>
+    <string name="about_feedback_sheet_sub">遇到問題、有想法：加客服微信 MarshallPD，或寄信到 Marshall@kunlungrowth.com；也可以在 GitHub 提問題</string>
+    <string name="about_feedback_sub">客服微信 MarshallPD · 複製診斷資訊</string>
+    <string name="about_guide">增長飛輪 AI 官網</string>
+    <string name="about_guide_sub">使用說明、落地案例和聯絡方式</string>
+    <string name="about_repo">開源程式碼</string>
+    <string name="about_repo_sub">%1$s · 基於 Mika 二次開發</string>
     <string name="about_update_bad_signer">這個安裝包的簽名和已安裝的咔噠不同，不能覆蓋安裝，已刪除。自己編譯的版本請先解除安裝，再裝官方版本。</string>
     <string name="about_update_install_hint">下載完成後點「安裝更新」，在系統安裝頁確認。第一次安裝需要允許咔噠安裝未知應用程式。</string>
     <string name="about_update_not_newer">下載的安裝包不比已安裝的咔噠新，已刪除。</string>
@@ -39,10 +43,8 @@
     <string name="card_see_process">回到咔噠看完整過程</string>
     <string name="card_zoom_hint">咔噠正在背景操作 · 點一下關閉</string>
     <string name="chat_empty_prompt">想讓咔噠做什麼？</string>
-    <string name="chat_example_follow">打開美團，看看附近評分最高的 3 家美甲店，只看不下單</string>
-    <string name="chat_example_group_summary">打開大眾點評，找 3 家評分 4.5 以上的美業門店，記下店名和地址</string>
-    <string name="chat_example_jobs">在網上查淮北最近在招 AI 相關職缺的 5 家公司，附上來源網址</string>
-    <string name="chat_example_multi_step">看看我手機裡裝了哪些辦公和客服類 App，列個清單</string>
+    <string name="chat_example_follow">開啟微信，搜尋公眾號「帅厂长」，點擊關注</string>
+    <string name="chat_example_group_summary">幫我總結一下「老板增长实战群」今天都聊了些啥</string>
     <string name="chat_placeholder_answer">回答咔噠的問題</string>
     <string name="chat_quoting_mika">引用咔噠:%1$s</string>
     <string name="chatgpt_fail_no_client">ChatGPT 沒有完成對咔噠的註冊，請再試一次。</string>
@@ -56,6 +58,7 @@
     <string name="chatgpt_welcome_body">咔噠裡符合條件的用量會使用你的 ChatGPT 方案。可以在 ChatGPT 設定裡管理用量。</string>
     <string name="dev_autonomy_sub">開啟後連付款也不先問你，咔噠直接做完；關著時只有付款先問</string>
     <string name="dev_note">這些開關影響咔噠做事的方式和速度，一般保持預設。</string>
+    <string name="diagnostics_copy_sub">版本、機型和設定狀態，複製後發給客服微信 MarshallPD</string>
     <string name="explain_a11y_not_running_body">系統設定裡顯示咔噠的無障礙服務是開著的，但它實際沒有在執行（咔噠被強行停止後常會這樣）。請到無障礙設定裡把咔噠關掉，再重新開啟。</string>
     <string name="explain_a11y_off_body">咔噠用無障礙服務讀取和操作它自己的虛擬螢幕。在系統設定的「無障礙」裡找到咔噠（有的手機放在「已下載的應用程式」或「已安裝的服務」裡），把它開啟。</string>
     <string name="explain_focus_body">Android 12、13 上背景操作可能影響主螢幕焦點：咔噠在虛擬螢幕上開啟 App 或翻頁時，你正在主螢幕輸入的地方可能短暫失去焦點，需要再點一下。Android 14 起虛擬螢幕有自己的焦點，不會這樣。這臺手機是 Android %1$s，仍然可以正常開始任務。</string>
@@ -76,8 +79,9 @@
     <string name="issue_body">- 機型：%1$s\n- Android 版本：%2$s（SDK %3$d）\n- 咔噠版本：%4$s（建置 %5$s）\n\n### 遇到了什麼問題\n\n\n### 做了哪幾步\n\n\n### 期望是什麼樣\n\n\n### 診斷資訊\n（選填）在咔噠「關於 › 回報問題 › 複製診斷資訊」複製後貼上在這裡\n\n</string>
     <string name="kept_reason_app_exit">咔噠結束了</string>
     <string name="language_system_detail">系統語言咔噠有譯文時用它,沒有時用英文</string>
+    <string name="mcp_cli_install_prompt">請按 https://github.com/AIMarshallLee/mika/blob/main/docs/agent-quickstart.md 在電腦安裝 Mika CLI 或適合目前 Agent 的 Skill。依手機上選擇的方式連線：USB 使用已授權的 ADB，Wi-Fi/私人 VPN 使用 HTTP 位址及私人權杖檔案。執行 connect 驗證連線；只裝 Skill 時使用隨附指令碼。不提交手機任務，也不要將權杖貼回對話。</string>
     <string name="mcp_servers_empty_sub">新增外部 MCP 伺服器，把它的工具交給咔噠。</string>
-    <string name="mcp_usb_client_instructions">在電腦的 MCP 用戶端新增 Streamable HTTP 伺服器，位址 http://127.0.0.1:%1$d/mcp。Authorization 請求標頭使用 Bearer 加上咔噠啟動命令在電腦輸出的權杖，不要將權杖貼回對話。連線或重新整理工具清單後，確認手機頂部請求時間更新。指南：https://github.com/wangzan101/Mika/blob/main/docs/mcp.md</string>
+    <string name="mcp_usb_client_instructions">在電腦的 MCP 用戶端新增 Streamable HTTP 伺服器，位址 http://127.0.0.1:%1$d/mcp。Authorization 請求標頭使用 Bearer 加上咔噠啟動命令在電腦輸出的權杖，不要將權杖貼回對話。連線或重新整理工具清單後，確認手機頂部請求時間更新。指南：https://github.com/AIMarshallLee/mika/blob/main/docs/mcp.md</string>
     <string name="metrics_empty">還沒有執行統計。讓咔噠辦件事，這裡就會記下。</string>
     <string name="metrics_note">只統計這臺手機上最近 %1$d 次執行；時間從咔噠開始處理算起，第一次回報是第一次看到它在做什麼的時候。</string>
     <string name="model_probe_no_tools">%1$s 沒有呼叫工具，咔噠做事需要會呼叫工具的模型。服務商已儲存，但沒有拿這個模型當主模型。</string>

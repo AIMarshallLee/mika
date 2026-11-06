@@ -2,10 +2,12 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">このシステム権限により、Kada は画面に表示されている内容を読み取って操作できます。Kada は、頼まれたタスクを自分の仮想画面でこなすときにだけ使い、メイン画面で操作するのは、そこでタスクを任されたときだけです。</string>
-    <string name="about_author">By Kunlun Growth · © 2026</string>
     <string name="about_data_note">Kada に送った内容(メッセージ、画面の内容、スクリーンショット)は、設定したモデルプロバイダーにだけ送信されます。Kada 専用のサーバーはなく、データも収集しません。アップデートの確認では GitHub にだけ接続します。</string>
-    <string name="about_repo">Open-source project Mika</string>
-    <string name="about_repo_sub">Kada mobile is built on it · %1$s</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_guide">Growth Flywheel AI website</string>
+    <string name="about_guide_sub">Guide, case studies and contact</string>
+    <string name="about_repo">Source code</string>
+    <string name="about_repo_sub">%1$s · built on Mika</string>
     <string name="about_update_bad_signer">このパッケージはインストール済みの Kada と署名が異なるため、上書きできません。削除しました。自分でビルドした Kada の場合は、先にアンインストールしてから公式版をインストールしてください。</string>
     <string name="about_update_install_hint">ダウンロードが終わったら「アップデートをインストール」をタップし、システムのインストール画面で確認してください。先に Kada に不明なアプリのインストールを許可する必要がある場合があります。</string>
     <string name="about_update_not_newer">ダウンロードしたパッケージは、インストール済みの Kada より新しくありません。削除しました。</string>
@@ -39,10 +41,7 @@
     <string name="card_see_process">Kada に戻って全体の流れを見る</string>
     <string name="card_zoom_hint">Kada はバックグラウンドで作業中 · タップで閉じる</string>
     <string name="chat_empty_prompt">Kada に何をお願いしますか？</string>
-    <string name="chat_example_follow">Open Meituan and look at the 3 top-rated nail salons nearby. Just look, don’t order</string>
-    <string name="chat_example_group_summary">Open Dianping and find 3 beauty salons rated 4.5+, note their names and addresses</string>
-    <string name="chat_example_jobs">Find 5 companies in Huaibei hiring for AI roles recently, with source links</string>
-    <string name="chat_example_multi_step">List the office and customer-service apps installed on my phone</string>
+    <string name="chat_example_follow">Open WeChat, search for the official account 帅厂长, and follow it.</string>
     <string name="chat_placeholder_answer">Kada の質問に答える</string>
     <string name="chat_quoting_mika">Kada を引用: %1$s</string>
     <string name="chat_unlock_body">スマホがロックされています。ロックを解除すると、Kada が続きを進めます。</string>
@@ -57,6 +56,7 @@
     <string name="dev_grounding_sub">ビジョンモデル %1$s で位置を正確に特定できると確認できたらオンにしてください。オフの間は、モデルが示した位置を Kada がタップする前に、別の根拠が必要です。</string>
     <string name="dev_group">Kada の動き方</string>
     <string name="dev_note">これらのスイッチは、Kada の動き方と速さに影響します。通常はデフォルトのままにしてください。</string>
+    <string name="diagnostics_copy_sub">Version, device and settings — copy and send to Marshall@kunlungrowth.com</string>
     <string name="explain_a11y_not_running_body">システム設定では Kada のユーザー補助サービスがオンになっていますが、実際には動作していません(Kada を強制停止したあとによく起こります)。ユーザー補助の設定で Kada をいったんオフにして、もう一度オンにしてください。</string>
     <string name="explain_a11y_off_body">Kada は、ユーザー補助サービスを使って、自分の仮想画面を読み取って操作します。システム設定の「ユーザー補助」で Kada を探し(機種によっては「ダウンロードしたアプリ」や「インストール済みのサービス」の中にあります)、オンにしてください。</string>
     <string name="explain_focus_body">Android 12～13 では、バックグラウンドの作業があなたの画面のフォーカスに影響することがあります。Kada が仮想画面でアプリを開いたりスクロールしたりすると、入力中の欄が一時的にフォーカスを失い、もう一度タップが必要になる場合があります。Android 14 以降は、仮想画面が独自のフォーカスを持ちます。このスマホは Android %1$s ですが、タスクは通常どおり動作します。</string>
@@ -78,8 +78,9 @@
     <string name="issue_body">- 端末: %1$s\n- Android バージョン: %2$s (SDK %3$d)\n- Kada バージョン: %4$s (ビルド %5$s)\n\n### 何が起きたか\n\n\n### 行った操作\n\n\n### 期待していた動作\n\n\n### 診断情報\n(任意) Kada で「概要」›「フィードバックを送信」›「診断情報をコピー」を開き、ここに貼り付けてください\n\n</string>
     <string name="kept_reason_app_exit">Kada が終了</string>
     <string name="language_system_detail">Kada が対応していればシステムの言語を使い、対応していなければ英語を使います</string>
+    <string name="mcp_cli_install_prompt">https://github.com/AIMarshallLee/mika/blob/main/docs/agent-quickstart.en.md に従って、この agent 用の Mika CLI または Skill をインストールしてください。スマホで選んだ接続方法を使います。USB は認証済みの ADB、Wi-Fi/プライベート VPN は HTTP アドレスと非公開のトークンファイルを使います。connect を実行して接続を確認してください。Skill だけの場合は、付属のスクリプトを使います。スマホのタスクを送信したり、会話にトークンを表示したりしないでください。</string>
     <string name="mcp_servers_empty_sub">外部 MCP サーバーを追加すると、そのツールを Kada から使えます。</string>
-    <string name="mcp_usb_client_instructions">このパソコンで、http://127.0.0.1:%1$d/mcp に Streamable HTTP の MCP サーバーを追加してください。Authorization ヘッダーには、Kada の開始コマンドが表示したトークンを Bearer に続けて設定します。会話にトークンを表示しないでください。接続するかツール一覧を更新して、スマホのリクエスト時刻が更新されるか確認してください。ガイド: https://github.com/wangzan101/Mika/blob/main/docs/mcp.en.md</string>
+    <string name="mcp_usb_client_instructions">このパソコンで、http://127.0.0.1:%1$d/mcp に Streamable HTTP の MCP サーバーを追加してください。Authorization ヘッダーには、Kada の開始コマンドが表示したトークンを Bearer に続けて設定します。会話にトークンを表示しないでください。接続するかツール一覧を更新して、スマホのリクエスト時刻が更新されるか確認してください。ガイド: https://github.com/AIMarshallLee/mika/blob/main/docs/mcp.en.md</string>
     <string name="memory_learn_sub">Kada が学んだ内容は、あなたが承認してから使われます</string>
     <string name="memory_unreadable">以前のメモリを読み取れなかったため、脇に置いて、Kada は新しく始めます。</string>
     <string name="memory_use_sub">オフにすると、Kada はメモリを読み込みも保存もしません</string>

@@ -2,10 +2,12 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">Izin sistem ini memungkinkan Kada membaca dan mengoperasikan isi layar apa pun. Kada hanya memakainya di layar virtualnya sendiri untuk mengerjakan tugas dari Anda, dan baru bertindak di layar utama saat Anda memberinya tugas di sana.</string>
-    <string name="about_author">By Kunlun Growth · © 2026</string>
     <string name="about_data_note">Apa yang Anda kirim ke Kada — pesan, isi layar, dan tangkapan layar — hanya dikirim ke penyedia model yang Anda atur. Kada tidak punya server sendiri dan tidak mengumpulkan data Anda; pemeriksaan pembaruan hanya menghubungi GitHub.</string>
-    <string name="about_repo">Open-source project Mika</string>
-    <string name="about_repo_sub">Kada mobile is built on it · %1$s</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_guide">Growth Flywheel AI website</string>
+    <string name="about_guide_sub">Guide, case studies and contact</string>
+    <string name="about_repo">Source code</string>
+    <string name="about_repo_sub">%1$s · built on Mika</string>
     <string name="about_update_bad_signer">Paket ini ditandatangani berbeda dari Kada yang terpasang, jadi tidak bisa memperbaruinya. Paket sudah dihapus. Jika Anda membangun Kada sendiri, copot dulu, lalu instal versi resmi.</string>
     <string name="about_update_install_hint">Setelah selesai diunduh, ketuk “Instal pembaruan” dan konfirmasi di penginstal sistem. Anda mungkin perlu mengizinkan Kada menginstal aplikasi tidak dikenal terlebih dahulu.</string>
     <string name="about_update_not_newer">Paket yang diunduh tidak lebih baru dari Kada yang terpasang. Paket sudah dihapus.</string>
@@ -39,10 +41,7 @@
     <string name="card_see_process">Kembali ke Kada untuk proses lengkapnya</string>
     <string name="card_zoom_hint">Kada bekerja di latar belakang · ketuk untuk menutup</string>
     <string name="chat_empty_prompt">Apa yang harus dikerjakan Kada?</string>
-    <string name="chat_example_follow">Open Meituan and look at the 3 top-rated nail salons nearby. Just look, don’t order</string>
-    <string name="chat_example_group_summary">Open Dianping and find 3 beauty salons rated 4.5+, note their names and addresses</string>
-    <string name="chat_example_jobs">Find 5 companies in Huaibei hiring for AI roles recently, with source links</string>
-    <string name="chat_example_multi_step">List the office and customer-service apps installed on my phone</string>
+    <string name="chat_example_follow">Open WeChat, search for the official account 帅厂长, and follow it.</string>
     <string name="chat_placeholder_answer">Jawab pertanyaan Kada</string>
     <string name="chat_quoting_mika">Mengutip Kada: %1$s</string>
     <string name="chat_unlock_body">Ponsel Anda terkunci. Kada akan melanjutkan setelah Anda membukanya.</string>
@@ -58,6 +57,7 @@
     <string name="dev_grounding_sub">Aktifkan setelah model visual %1$s teruji menemukan posisi dengan akurat; jika nonaktif, posisi yang ditandainya perlu bukti lain sebelum Kada mengetuk.</string>
     <string name="dev_group">Cara Kada bekerja</string>
     <string name="dev_note">Pengaturan ini memengaruhi cara dan kecepatan kerja Kada. Biasanya biarkan di nilai default.</string>
+    <string name="diagnostics_copy_sub">Version, device and settings — copy and send to Marshall@kunlungrowth.com</string>
     <string name="explain_a11y_not_running_body">Setelan sistem menunjukkan layanan aksesibilitas Kada aktif, tetapi sebenarnya tidak berjalan (ini sering terjadi setelah Kada dihentikan paksa). Matikan Kada di setelan aksesibilitas, lalu aktifkan lagi.</string>
     <string name="explain_a11y_off_body">Kada memakai layanan aksesibilitas untuk membaca dan mengendalikan layar virtualnya sendiri. Cari Kada di Aksesibilitas pada setelan sistem (di beberapa ponsel ada di bawah “Aplikasi yang diunduh” atau “Layanan terpasang”) dan aktifkan.</string>
     <string name="explain_focus_body">Di Android 12–13, pekerjaan latar belakang bisa memengaruhi fokus di layar Anda: saat Kada membuka aplikasi atau menggulir di layar virtual, kolom yang sedang Anda ketik mungkin sesaat kehilangan fokus dan perlu diketuk lagi. Mulai Android 14 layar virtual punya fokus sendiri. Ponsel ini menjalankan Android %1$s; tugas tetap berjalan normal.</string>
@@ -80,8 +80,9 @@
     <string name="issue_body">- Perangkat: %1$s\n- Versi Android: %2$s (SDK %3$d)\n- Versi Kada: %4$s (build %5$s)\n\n### Apa yang salah\n\n\n### Langkah yang Anda lakukan\n\n\n### Yang Anda harapkan\n\n\n### Diagnostik\n(Opsional) Di Kada, buka Tentang › Kirim masukan › Salin diagnostik, lalu tempel di sini\n\n</string>
     <string name="kept_reason_app_exit">Kada keluar</string>
     <string name="language_system_detail">Memakai bahasa sistem Anda jika Kada mendukungnya, jika tidak memakai bahasa Inggris</string>
+    <string name="mcp_cli_install_prompt">Follow https://github.com/AIMarshallLee/mika/blob/main/docs/agent-quickstart.en.md to install Mika CLI or the Skill for this agent. Use the connection method selected on the phone: USB uses authorized ADB; Wi-Fi/private VPN uses the HTTP address and a private token file. Run connect to verify the connection. With only the Skill, use its bundled script. Do not submit phone tasks or print tokens in the conversation.</string>
     <string name="mcp_servers_empty_sub">Tambahkan server MCP eksternal agar Kada dapat memakai alatnya.</string>
-    <string name="mcp_usb_client_instructions">Add a Streamable HTTP MCP server at http://127.0.0.1:%1$d/mcp on this computer. Set the Authorization header to Bearer followed by the token printed by the Kada start command. Do not print the token in the conversation. Connect or refresh the tool list and check that the request time on the phone updates. Guide: https://github.com/wangzan101/Mika/blob/main/docs/mcp.en.md</string>
+    <string name="mcp_usb_client_instructions">Add a Streamable HTTP MCP server at http://127.0.0.1:%1$d/mcp on this computer. Set the Authorization header to Bearer followed by the token printed by the Kada start command. Do not print the token in the conversation. Connect or refresh the tool list and check that the request time on the phone updates. Guide: https://github.com/AIMarshallLee/mika/blob/main/docs/mcp.en.md</string>
     <string name="memory_learn_sub">Hal yang dipelajari Kada baru dipakai setelah Anda menerimanya</string>
     <string name="memory_unreadable">Memori sebelumnya tidak bisa dibaca; disisihkan dan Kada mulai dari awal.</string>
     <string name="memory_use_sub">Jika nonaktif, Kada tidak membaca maupun menyimpan memori</string>

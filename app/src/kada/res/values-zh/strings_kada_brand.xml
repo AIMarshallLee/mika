@@ -2,11 +2,16 @@
 <!-- 由 tools/kada/gen_brand_strings.py 生成,请勿手改;改措辞请改脚本里的 CUSTOM 后重新生成。 -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">这项系统权限能让咔哒读取和操作任何屏幕上的内容。咔哒只在它自己的虚拟屏幕上用它来完成你交给它的任务；只有你把主屏幕上的任务交给它时，才会在主屏幕上操作。</string>
-    <string name="about_author">昆仑增长 出品 · © 2026</string>
+    <string name="about_author">昆仑增长 出品 · 基于王赞开发的开源项目 Mika(Apache-2.0)二次开发</string>
     <string name="about_check_sub">演示版不在线更新,新版本由昆仑增长提供</string>
     <string name="about_data_note">你发给咔哒的话、屏幕内容和截图，只发给你自己设置的模型服务商。咔哒演示版没有自己的服务器，不收集你的数据，也不自动检查更新。</string>
-    <string name="about_repo">开源项目 Mika</string>
-    <string name="about_repo_sub">咔哒手机版基于它开发 · %1$s</string>
+    <string name="about_feedback_github_sub">报 Bug、提需求，在昆仑增长的仓库里跟踪进度</string>
+    <string name="about_feedback_sheet_sub">遇到问题、有想法：加客服微信 MarshallPD，或发邮件到 Marshall@kunlungrowth.com；也可以在 GitHub 提问题</string>
+    <string name="about_feedback_sub">客服微信 MarshallPD · 复制诊断信息</string>
+    <string name="about_guide">增长飞轮 AI 官网</string>
+    <string name="about_guide_sub">使用说明、落地案例和联系方式</string>
+    <string name="about_repo">开源代码</string>
+    <string name="about_repo_sub">%1$s · 基于 Mika 二次开发</string>
     <string name="about_tagline">咔哒 AI 工作助手 · 增长飞轮 AI 出品</string>
     <string name="about_update_bad_signer">这个安装包的签名和已装的咔哒不同，不能覆盖安装，已删除。自己编译的版本请先卸载再装官方版。</string>
     <string name="about_update_install_hint">下载完成后点「安装更新」，在系统安装页确认。首次安装需要允许咔哒安装未知应用。</string>
@@ -41,10 +46,10 @@
     <string name="card_see_process">回到咔哒看完整过程</string>
     <string name="card_zoom_hint">咔哒正在后台操作 · 点一下关闭</string>
     <string name="chat_empty_prompt">想让咔哒做什么？</string>
-    <string name="chat_example_follow">打开美团，看看附近评分最高的 3 家美甲店，只看不下单</string>
-    <string name="chat_example_group_summary">打开大众点评，找 3 家评分 4.5 以上的美业门店，记下店名和地址</string>
-    <string name="chat_example_jobs">在网上查淮北最近在招 AI 相关岗位的 5 家公司，附上来源网址</string>
-    <string name="chat_example_multi_step">看看我手机里装了哪些办公和客服类 App，列个清单</string>
+    <string name="chat_example_follow">打开微信，搜索公众号「帅厂长」，点击关注</string>
+    <string name="chat_example_group_summary">帮我总结一下「老板增长实战群」今天都聊了些啥</string>
+    <string name="chat_example_jobs">用网页在高德地图搜淮北的家装公司，整理前 5 家的名称、电话和地址</string>
+    <string name="chat_example_multi_step">打开抖音搜「AI 获客」，看前 5 条视频，总结它们各讲了什么</string>
     <string name="chat_placeholder_answer">回答咔哒的问题</string>
     <string name="chat_quoting_mika">引用咔哒:%1$s</string>
     <string name="chatgpt_fail_no_client">ChatGPT 没有完成对咔哒的注册，请再试一次。</string>
@@ -58,6 +63,7 @@
     <string name="chatgpt_welcome_body">咔哒里符合条件的用量会使用你的 ChatGPT 套餐。可以在 ChatGPT 设置里管理用量。</string>
     <string name="dev_autonomy_sub">打开后连付款也不先问你，咔哒直接做完；关着时只有付款先问</string>
     <string name="dev_note">这些开关影响咔哒做事的方式和速度，一般保持默认。</string>
+    <string name="diagnostics_copy_sub">版本、机型和设置状态，复制后发给客服微信 MarshallPD</string>
     <string name="explain_a11y_not_running_body">系统设置里显示咔哒的无障碍服务是开着的，但它实际没有在运行（咔哒被强行停止后常会这样）。请到无障碍设置里把咔哒关掉，再重新打开。</string>
     <string name="explain_a11y_off_body">咔哒用无障碍服务读取和操作它自己的虚拟屏。在系统设置的「无障碍」里找到咔哒（有的手机放在「已下载的应用」或「已安装的服务」里），把它打开。</string>
     <string name="explain_focus_body">安卓 12、13 上后台操作可能影响主屏焦点：咔哒在虚拟屏上打开 App 或翻页时，你正在主屏输入的地方可能短暂失去焦点，需要再点一下。安卓 14 起虚拟屏有自己的焦点，不会这样。这台手机是安卓 %1$s，仍然可以正常开始任务。</string>
@@ -78,8 +84,9 @@
     <string name="issue_body">- 机型：%1$s\n- 安卓版本：%2$s（SDK %3$d）\n- 咔哒版本：%4$s（构建 %5$s）\n\n### 遇到了什么问题\n\n\n### 做了哪几步\n\n\n### 期望是什么样\n\n\n### 诊断信息\n（可选）在咔哒「关于 › 反馈问题 › 复制诊断信息」复制后粘贴在这里\n\n</string>
     <string name="kept_reason_app_exit">咔哒退出了</string>
     <string name="language_system_detail">系统语言咔哒有译文时用它,没有时用英文</string>
+    <string name="mcp_cli_install_prompt">请按 https://github.com/AIMarshallLee/mika/blob/main/docs/agent-quickstart.md 在电脑安装 Mika CLI 或适合当前 Agent 的 Skill。按手机上选择的方式连接：USB 使用已授权的 ADB，Wi-Fi/私有 VPN 使用 HTTP 地址和私有令牌文件。执行 connect 验证连接；只装 Skill 时使用随附脚本。不提交手机任务，也不要将令牌贴回对话。</string>
     <string name="mcp_servers_empty_sub">添加外部 MCP 服务器，把它的工具交给咔哒。</string>
-    <string name="mcp_usb_client_instructions">在电脑的 MCP 客户端添加 Streamable HTTP 服务器，地址 http://127.0.0.1:%1$d/mcp。Authorization 请求头使用 Bearer 加上咔哒启动命令在电脑输出的令牌，不要将令牌贴回对话。连接或刷新工具列表后，确认手机顶部请求时间更新。指南：https://github.com/wangzan101/Mika/blob/main/docs/mcp.md</string>
+    <string name="mcp_usb_client_instructions">在电脑的 MCP 客户端添加 Streamable HTTP 服务器，地址 http://127.0.0.1:%1$d/mcp。Authorization 请求头使用 Bearer 加上咔哒启动命令在电脑输出的令牌，不要将令牌贴回对话。连接或刷新工具列表后，确认手机顶部请求时间更新。指南：https://github.com/AIMarshallLee/mika/blob/main/docs/mcp.md</string>
     <string name="metrics_empty">还没有运行统计。让咔哒办件事，这里就会记下。</string>
     <string name="metrics_note">只统计这台手机上最近 %1$d 次运行；时间从咔哒开始处理算起，第一次反馈是第一次看到它在做什么的时候。</string>
     <string name="model_probe_no_tools">%1$s 没有调用工具，咔哒干活需要会调用工具的模型。服务商已保存，但没有拿这个模型当主模型。</string>

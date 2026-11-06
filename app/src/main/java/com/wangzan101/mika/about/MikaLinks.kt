@@ -6,9 +6,10 @@ import java.net.URLEncoder
 
 /** Mika 对外的地址都在这里:仓库、问题、检查更新用的两个来源。换地址只改这一处。 */
 object MikaLinks {
-    const val REPO = "https://github.com/wangzan101/Mika"
-    const val REPO_LABEL = "github.com/wangzan101/Mika"
-    const val README = "$REPO#readme"
+    // 咔哒(昆仑增长)修改:仓库与使用说明地址改由构建配置提供,原版构建仍是 wangzan101/Mika
+    const val REPO = com.wangzan101.mika.BuildConfig.REPO_URL
+    val REPO_LABEL: String get() = REPO.removePrefix("https://")
+    const val README = com.wangzan101.mika.BuildConfig.GUIDE_URL
     const val RELEASES = "$REPO/releases"
     const val NEW_ISSUE = "$REPO/issues/new"
     /** 检查更新只问 GitHub 发布页(不登录,每小时有次数限制)。 */
