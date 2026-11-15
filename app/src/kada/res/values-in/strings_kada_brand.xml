@@ -41,7 +41,7 @@
     <string name="card_see_process">Kembali ke Kada untuk proses lengkapnya</string>
     <string name="card_zoom_hint">Kada bekerja di latar belakang · ketuk untuk menutup</string>
     <string name="chat_empty_prompt">Apa yang harus dikerjakan Kada?</string>
-    <string name="chat_example_follow">Open WeChat, search for the official account 帅厂长, and follow it.</string>
+    <string name="chat_example_follow">Open the browser, search for the top-rated coffee shops nearby, and list the top 3.</string>
     <string name="chat_placeholder_answer">Jawab pertanyaan Kada</string>
     <string name="chat_quoting_mika">Mengutip Kada: %1$s</string>
     <string name="chat_unlock_body">Ponsel Anda terkunci. Kada akan melanjutkan setelah Anda membukanya.</string>

@@ -41,7 +41,7 @@
     <string name="card_see_process">العودة إلى Kada لعرض العملية كاملة</string>
     <string name="card_zoom_hint">تعمل Kada في الخلفية · انقر للإغلاق</string>
     <string name="chat_empty_prompt">ما الذي تريد من Kada أن تفعله؟</string>
-    <string name="chat_example_follow">Open WeChat, search for the official account 帅厂长, and follow it.</string>
+    <string name="chat_example_follow">Open the browser, search for the top-rated coffee shops nearby, and list the top 3.</string>
     <string name="chat_placeholder_answer">أجب عن سؤال Kada</string>
     <string name="chat_quoting_mika">اقتباس من Kada: %1$s</string>
     <string name="chat_unlock_body">هاتفك مقفل. ستتابع Kada العمل بعد إلغاء قفله.</string>

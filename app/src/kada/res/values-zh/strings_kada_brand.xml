@@ -46,7 +46,7 @@
     <string name="card_see_process">回到咔哒看完整过程</string>
     <string name="card_zoom_hint">咔哒正在后台操作 · 点一下关闭</string>
     <string name="chat_empty_prompt">想让咔哒做什么？</string>
-    <string name="chat_example_follow">打开微信，搜索公众号「帅厂长」，点击关注</string>
+    <string name="chat_example_follow">打开浏览器，搜索附近评分最高的咖啡店，列出前 3 家</string>
     <string name="chat_example_group_summary">帮我总结一下「老板增长实战群」今天都聊了些啥</string>
     <string name="chat_example_jobs">用网页在高德地图搜附近的家装公司，整理前 5 家的名称、电话和地址</string>
     <string name="chat_example_multi_step">打开抖音搜「AI 获客」，看前 5 条视频，总结它们各讲了什么</string>

@@ -43,7 +43,7 @@
     <string name="card_see_process">回到咔噠看完整過程</string>
     <string name="card_zoom_hint">咔噠正在背景操作 · 點一下關閉</string>
     <string name="chat_empty_prompt">想讓咔噠做什麼？</string>
-    <string name="chat_example_follow">開啟微信，搜尋公眾號「帅厂长」，點擊關注</string>
+    <string name="chat_example_follow">開啟瀏覽器，搜尋附近評分最高的咖啡店，列出前 3 家</string>
     <string name="chat_example_group_summary">幫我總結一下「老板增长实战群」今天都聊了些啥</string>
     <string name="chat_placeholder_answer">回答咔噠的問題</string>
     <string name="chat_quoting_mika">引用咔噠:%1$s</string>

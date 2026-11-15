@@ -68,7 +68,7 @@ CUSTOM = {
         "welcome_title": "你好，我是咔哒",
         "welcome_lead": "咔哒 AI 工作助手，在你的手机上替你办事。\n告诉我要做什么，我在后台把它做完。",
         # 对话页的示例:换成增长飞轮 AI 自己的账号和获客场景
-        "chat_example_follow": f"打开微信，搜索公众号「{MP_NAME}」，点击关注",
+        "chat_example_follow": "打开浏览器，搜索附近评分最高的咖啡店，列出前 3 家",
         "chat_example_group_summary": f"帮我总结一下「{OWN_GROUP}」今天都聊了些啥",
         "chat_example_jobs": "用网页在高德地图搜附近的家装公司，整理前 5 家的名称、电话和地址",
         "chat_example_multi_step": "打开抖音搜「AI 获客」，看前 5 条视频，总结它们各讲了什么",
@@ -82,7 +82,7 @@ CUSTOM = {
         "about_feedback_sub": f"客服号 {SERVICE_WECHAT} · 複製診斷資訊",
         "about_feedback_sheet_sub": f"遇到問題、有想法：加客服号 {SERVICE_WECHAT}，或寄信到 {SERVICE_EMAIL}；也可以在 GitHub 提問題",
         "diagnostics_copy_sub": f"版本、機型和設定狀態，複製後發給客服号 {SERVICE_WECHAT}",
-        "chat_example_follow": f"開啟微信，搜尋公眾號「{MP_NAME}」，點擊關注",
+        "chat_example_follow": "開啟瀏覽器，搜尋附近評分最高的咖啡店，列出前 3 家",
         "chat_example_group_summary": f"幫我總結一下「{OWN_GROUP}」今天都聊了些啥",
     },
     "values": {
@@ -98,7 +98,7 @@ CUSTOM = {
         "about_feedback_sheet_sub": f"Problems or ideas? Message our support account {SERVICE_WECHAT}, email {SERVICE_EMAIL}, or open a GitHub issue.",
         "diagnostics_copy_sub": f"Version, device and settings — copy and send to {SERVICE_EMAIL}",
         "welcome_title": "Hi, I’m Kada",
-        "chat_example_follow": f"Open WeChat, search for the official account {MP_NAME}, and follow it.",
+        "chat_example_follow": "Open the browser, search for the top-rated coffee shops nearby, and list the top 3.",
         # 开源许可页顶部的上游与修改说明(Apache-2.0 第 4 条),以及 GPL/LGPL 组件源码的位置;原版里为空、不显示
         "kada_upstream_notice": (
             "咔哒手机版基于王赞开发的开源项目 Mika(Apache-2.0,https://github.com/wangzan101/Mika)修改:"
