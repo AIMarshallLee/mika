@@ -3,7 +3,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">Izin sistem ini memungkinkan Kada membaca dan mengoperasikan isi layar apa pun. Kada hanya memakainya di layar virtualnya sendiri untuk mengerjakan tugas dari Anda, dan baru bertindak di layar utama saat Anda memberinya tugas di sana.</string>
     <string name="about_data_note">Apa yang Anda kirim ke Kada — pesan, isi layar, dan tangkapan layar — hanya dikirim ke penyedia model yang Anda atur. Kada tidak punya server sendiri dan tidak mengumpulkan data Anda; pemeriksaan pembaruan hanya menghubungi GitHub.</string>
-    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message our support account MarshallPD, email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
     <string name="about_guide">Growth Flywheel AI website</string>
     <string name="about_guide_sub">Guide, case studies and contact</string>
     <string name="about_repo">Source code</string>

@@ -4,8 +4,8 @@
     <string name="a11y_service_description">這項系統權限能讓咔噠讀取和操作任何螢幕上的內容。咔噠只在它自己的虛擬螢幕上用它來完成你交給它的任務；只有你把主螢幕上的任務交給它時，才會在主螢幕上操作。</string>
     <string name="about_author">昆侖增長 出品 · 基於王贊開發的開源專案 Mika(Apache-2.0)二次開發</string>
     <string name="about_data_note">你發給咔噠的話、螢幕內容和截圖，只發給你自己設定的模型服務商。咔噠沒有自己的伺服器，不收集你的資料；檢查更新時只連線 GitHub。</string>
-    <string name="about_feedback_sheet_sub">遇到問題、有想法：加客服微信 MarshallPD，或寄信到 Marshall@kunlungrowth.com；也可以在 GitHub 提問題</string>
-    <string name="about_feedback_sub">客服微信 MarshallPD · 複製診斷資訊</string>
+    <string name="about_feedback_sheet_sub">遇到問題、有想法：加客服号 MarshallPD，或寄信到 Marshall@kunlungrowth.com；也可以在 GitHub 提問題</string>
+    <string name="about_feedback_sub">客服号 MarshallPD · 複製診斷資訊</string>
     <string name="about_guide">增長飛輪 AI 官網</string>
     <string name="about_guide_sub">使用說明、落地案例和聯絡方式</string>
     <string name="about_repo">開源程式碼</string>
@@ -58,7 +58,7 @@
     <string name="chatgpt_welcome_body">咔噠裡符合條件的用量會使用你的 ChatGPT 方案。可以在 ChatGPT 設定裡管理用量。</string>
     <string name="dev_autonomy_sub">開啟後連付款也不先問你，咔噠直接做完；關著時只有付款先問</string>
     <string name="dev_note">這些開關影響咔噠做事的方式和速度，一般保持預設。</string>
-    <string name="diagnostics_copy_sub">版本、機型和設定狀態，複製後發給客服微信 MarshallPD</string>
+    <string name="diagnostics_copy_sub">版本、機型和設定狀態，複製後發給客服号 MarshallPD</string>
     <string name="explain_a11y_not_running_body">系統設定裡顯示咔噠的無障礙服務是開著的，但它實際沒有在執行（咔噠被強行停止後常會這樣）。請到無障礙設定裡把咔噠關掉，再重新開啟。</string>
     <string name="explain_a11y_off_body">咔噠用無障礙服務讀取和操作它自己的虛擬螢幕。在系統設定的「無障礙」裡找到咔噠（有的手機放在「已下載的應用程式」或「已安裝的服務」裡），把它開啟。</string>
     <string name="explain_focus_body">Android 12、13 上背景操作可能影響主螢幕焦點：咔噠在虛擬螢幕上開啟 App 或翻頁時，你正在主螢幕輸入的地方可能短暫失去焦點，需要再點一下。Android 14 起虛擬螢幕有自己的焦點，不會這樣。這臺手機是 Android %1$s，仍然可以正常開始任務。</string>

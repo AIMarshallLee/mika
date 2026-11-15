@@ -6,7 +6,7 @@
     <string name="about_beta_label" translatable="false">演示版</string>
     <string name="about_check_sub">The demo build does not update online</string>
     <string name="about_data_note">What you send Kada — messages, screen content and screenshots — goes only to the model provider you set up. Kada has no servers of its own and collects none of your data; checking for updates only contacts GitHub.</string>
-    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message our support account MarshallPD, email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
     <string name="about_guide">Growth Flywheel AI website</string>
     <string name="about_guide_sub">Guide, case studies and contact</string>
     <string name="about_repo">Source code</string>

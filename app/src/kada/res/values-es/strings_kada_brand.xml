@@ -3,7 +3,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">Este permiso del sistema permite a Kada leer y manejar lo que hay en cualquier pantalla. Kada lo usa solo en su propia pantalla virtual para hacer las tareas que le das, y actúa en tu pantalla principal solo cuando le encargas una tarea allí.</string>
     <string name="about_data_note">Lo que le envías a Kada (mensajes, contenido de la pantalla y capturas) va solo al proveedor de modelos que configuraste. Kada no tiene servidores propios y no recoge ninguno de tus datos; al buscar actualizaciones solo se conecta con GitHub.</string>
-    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message our support account MarshallPD, email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
     <string name="about_guide">Growth Flywheel AI website</string>
     <string name="about_guide_sub">Guide, case studies and contact</string>
     <string name="about_repo">Source code</string>

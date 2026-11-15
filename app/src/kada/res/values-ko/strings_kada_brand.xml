@@ -3,7 +3,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">Kada가 모든 화면의 내용을 읽고 조작할 수 있게 해 주는 시스템 권한이에요. Kada는 맡긴 작업을 처리할 때 자체 가상 화면에서만 이 권한을 사용하고, 메인 화면에서는 그 화면에서 작업을 맡겼을 때만 동작해요.</string>
     <string name="about_data_note">Kada에 보내는 내용(메시지, 화면 내용, 스크린샷)은 직접 설정한 모델 제공업체에게만 전달돼요. Kada는 자체 서버가 없고 데이터를 수집하지 않아요. 업데이트 확인은 GitHub에만 연결해요.</string>
-    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message our support account MarshallPD, email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
     <string name="about_guide">Growth Flywheel AI website</string>
     <string name="about_guide_sub">Guide, case studies and contact</string>
     <string name="about_repo">Source code</string>

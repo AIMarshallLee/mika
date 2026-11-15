@@ -6,8 +6,8 @@
     <string name="about_check_sub">演示版不在线更新,新版本由昆仑增长提供</string>
     <string name="about_data_note">你发给咔哒的话、屏幕内容和截图，只发给你自己设置的模型服务商。咔哒演示版没有自己的服务器，不收集你的数据，也不自动检查更新。</string>
     <string name="about_feedback_github_sub">报 Bug、提需求，在昆仑增长的仓库里跟踪进度</string>
-    <string name="about_feedback_sheet_sub">遇到问题、有想法：加客服微信 MarshallPD，或发邮件到 Marshall@kunlungrowth.com；也可以在 GitHub 提问题</string>
-    <string name="about_feedback_sub">客服微信 MarshallPD · 复制诊断信息</string>
+    <string name="about_feedback_sheet_sub">遇到问题、有想法：加客服号 MarshallPD，或发邮件到 Marshall@kunlungrowth.com；也可以在 GitHub 提问题</string>
+    <string name="about_feedback_sub">客服号 MarshallPD · 复制诊断信息</string>
     <string name="about_guide">增长飞轮 AI 官网</string>
     <string name="about_guide_sub">使用说明、落地案例和联系方式</string>
     <string name="about_repo">开源代码</string>
@@ -48,7 +48,7 @@
     <string name="chat_empty_prompt">想让咔哒做什么？</string>
     <string name="chat_example_follow">打开微信，搜索公众号「帅厂长」，点击关注</string>
     <string name="chat_example_group_summary">帮我总结一下「老板增长实战群」今天都聊了些啥</string>
-    <string name="chat_example_jobs">用网页在高德地图搜淮北的家装公司，整理前 5 家的名称、电话和地址</string>
+    <string name="chat_example_jobs">用网页在高德地图搜附近的家装公司，整理前 5 家的名称、电话和地址</string>
     <string name="chat_example_multi_step">打开抖音搜「AI 获客」，看前 5 条视频，总结它们各讲了什么</string>
     <string name="chat_placeholder_answer">回答咔哒的问题</string>
     <string name="chat_quoting_mika">引用咔哒:%1$s</string>
@@ -63,7 +63,7 @@
     <string name="chatgpt_welcome_body">咔哒里符合条件的用量会使用你的 ChatGPT 套餐。可以在 ChatGPT 设置里管理用量。</string>
     <string name="dev_autonomy_sub">打开后连付款也不先问你，咔哒直接做完；关着时只有付款先问</string>
     <string name="dev_note">这些开关影响咔哒做事的方式和速度，一般保持默认。</string>
-    <string name="diagnostics_copy_sub">版本、机型和设置状态，复制后发给客服微信 MarshallPD</string>
+    <string name="diagnostics_copy_sub">版本、机型和设置状态，复制后发给客服号 MarshallPD</string>
     <string name="explain_a11y_not_running_body">系统设置里显示咔哒的无障碍服务是开着的，但它实际没有在运行（咔哒被强行停止后常会这样）。请到无障碍设置里把咔哒关掉，再重新打开。</string>
     <string name="explain_a11y_off_body">咔哒用无障碍服务读取和操作它自己的虚拟屏。在系统设置的「无障碍」里找到咔哒（有的手机放在「已下载的应用」或「已安装的服务」里），把它打开。</string>
     <string name="explain_focus_body">安卓 12、13 上后台操作可能影响主屏焦点：咔哒在虚拟屏上打开 App 或翻页时，你正在主屏输入的地方可能短暂失去焦点，需要再点一下。安卓 14 起虚拟屏有自己的焦点，不会这样。这台手机是安卓 %1$s，仍然可以正常开始任务。</string>

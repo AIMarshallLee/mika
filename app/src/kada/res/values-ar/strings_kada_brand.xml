@@ -3,7 +3,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="a11y_service_description">يتيح هذا الإذن للنظام لـ Kada قراءة ما يظهر على أي شاشة والتفاعل معه. لا تستخدم Kada هذا الإذن إلا على شاشتها الافتراضية لتنفيذ المهام التي تطلبها منها، ولا تعمل على شاشتك الرئيسية إلا عندما تسند إليها مهمة عليها.</string>
     <string name="about_data_note">كل ما ترسله إلى Kada — الرسائل ومحتوى الشاشة ولقطات الشاشة — يُرسل فقط إلى موفر النموذج الذي أعددته. لا تملك Kada خوادم خاصة بها ولا تجمع أي بيانات عنك؛ ولا يتصل التحقق من التحديثات إلا بـ GitHub.</string>
-    <string name="about_feedback_sheet_sub">Problems or ideas? Message us on WeChat (MarshallPD), email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
+    <string name="about_feedback_sheet_sub">Problems or ideas? Message our support account MarshallPD, email Marshall@kunlungrowth.com, or open a GitHub issue.</string>
     <string name="about_guide">Growth Flywheel AI website</string>
     <string name="about_guide_sub">Guide, case studies and contact</string>
     <string name="about_repo">Source code</string>
